@@ -69,5 +69,5 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-arjen) ; try color-theme-select to get menu
+(color-theme-blue-mood) ; try color-theme-select to get menu
 
