@@ -58,7 +58,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(org-agenda-files (quote ("~/notes/fun.org" "~/notes/work.org" "~/notes/personal.org" "~/code/lbl2/notes/lbl2.org")))
+ '(org-agenda-files (quote ("~/notes/fun.org" "~/notes/work.org" "~/notes/personal.org" )))
  '(scroll-conservatively 10000)
  '(show-paren-mode t))
 
@@ -69,5 +69,8 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-blue-mood) ; try color-theme-select to get menu
+
+(if (eql nil (getenv "SSH_CLIENT"))
+    (color-theme-arjen)
+    (color-theme-blue-mood))
 
