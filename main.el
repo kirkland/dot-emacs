@@ -12,7 +12,8 @@
 (global-font-lock-mode 1)
 (transient-mark-mode 1)
 (put 'erase-buffer 'disabled nil)
-;(menu-bar-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 
 ;; Load Paths
 ;; ==========
