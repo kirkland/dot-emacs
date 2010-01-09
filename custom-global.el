@@ -1,3 +1,5 @@
+(global-set-key (kbd "C-c y") 'clipboard-yank)
+
 (global-set-key (kbd "\C-x\C-b") 'bs-show) ; use buffer-selection-menu mode
 (global-set-key "\C-z" 'shell)
 

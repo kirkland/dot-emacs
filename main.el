@@ -37,34 +37,15 @@
 (load-file "~/.emacs.d/find-recursive.txt")
 ;(load-library "icicles")  ; slows startup
 (load-file "~/.emacs.d/backups.el")
+(setq custom-file "~/.emacs.d/auto-custom.el")
+(load "~/.emacs.d/haskell-mode/haskell-site-file")
+(load custom-file 'noerror)
 
 (require 'rails-autoload)
 
-;; Emacs automatic settings
-;; ========================
-
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 97 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
- '(font-lock-builtin-face ((((type tty) (class color)) (:foreground "yellow" :weight light))))
- '(link ((((class color) (background light)) (:foreground "cyan" :underline t))))
- '(minibuffer-prompt ((t (:foreground "cyan" :family "default")))))
-
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(org-agenda-files (quote ("~/notes/fun.org" "~/notes/work.org" "~/notes/personal.org" )))
- '(scroll-conservatively 10000)
- '(show-paren-mode t))
-
 
 (shell)
+(load-file "~/.emacs.d/custom-shell.el")
 
 ;; below here should be organized more nicely at some point
 
@@ -75,3 +56,14 @@
     (color-theme-arjen)
     (color-theme-blue-mood))
 
+
+(put 'dired-find-alternate-file 'disabled nil)
+
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+        "Prevent annoying \"Active processes exist\" query when you quit Emacs."
+        (flet ((process-list ())) ad-do-it))
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
