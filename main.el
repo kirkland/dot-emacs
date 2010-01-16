@@ -14,6 +14,7 @@
 (put 'erase-buffer 'disabled nil)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(scroll-bar-mode 0)
 
 ;; Load Paths
 ;; ==========
