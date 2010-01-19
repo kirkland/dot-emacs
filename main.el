@@ -69,3 +69,5 @@
 
 (shell)
 (load-file "~/.emacs.d/custom-shell.el")
+
+(switch-to-buffer (other-buffer)) ; lazy way to start in *scratch*, not shell
