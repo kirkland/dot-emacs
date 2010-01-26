@@ -8,6 +8,7 @@
 		      (local-set-key (kbd "C-c >") 'org-cycle-agenda-files)
 		      (local-set-key (kbd "C-c C-j") 'org-shiftmetadown)
 		      (local-set-key (kbd "C-c C-k") 'org-shiftmetaup)
+		      (local-set-key (kbd "C-c C-s") 'org-sparse-tree)
 		      (add-hook 'org-after-todo-state-change-hook ; default tag
 				'(lambda () (if (string= "TODO" state)
 						(org-toggle-tag "comp" 'on)
