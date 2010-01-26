@@ -37,7 +37,7 @@
 (load-file "~/.emacs.d/custom-ruby.el")
 (load-file "~/.emacs.d/snippet.el")
 (load-file "~/.emacs.d/find-recursive.txt")
-;(load-library "icicles")  ; slows startup
+(load-library "icicles")  ; slows startup
 (load-file "~/.emacs.d/backups.el")
 (setq custom-file "~/.emacs.d/auto-custom.el")
 (load "~/.emacs.d/haskell-mode/haskell-site-file")
@@ -45,7 +45,7 @@
 
 (require 'uniquify)
 (require 'rails-autoload)
-
+(icy-mode)
 
 
 ;; below here should be organized more nicely at some point
