@@ -21,5 +21,6 @@
  '(org-enforce-todo-dependencies t)
  '(org-fast-tag-selection-single-key (quote expert))
  '(scroll-conservatively 10000)
- '(show-paren-mode t))
+ '(show-paren-mode t)
+ '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 

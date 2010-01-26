@@ -43,11 +43,15 @@
 (load "~/.emacs.d/haskell-mode/haskell-site-file")
 (load custom-file 'noerror)
 
+(require 'uniquify)
 (require 'rails-autoload)
 
 
 
 ;; below here should be organized more nicely at some point
+
+;; overrides default behavior for naming buffers w/ same filename
+
 
 (require 'color-theme)
 (color-theme-initialize)
