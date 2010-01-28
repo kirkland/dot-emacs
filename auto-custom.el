@@ -19,7 +19,6 @@
  '(column-number-mode t)
  '(org-agenda-files (quote ("~/notes/fun.org" "~/notes/work.org" "~/notes/personal.org")))
  '(org-enforce-todo-dependencies t)
- '(org-fast-tag-selection-single-key (quote expert))
  '(scroll-conservatively 10000)
  '(show-paren-mode t)
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
