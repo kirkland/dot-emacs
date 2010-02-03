@@ -79,3 +79,7 @@
 
 ;; fix tabs?!
 (define-key text-mode-map (kbd "TAB") 'self-insert-command)
+
+;; html helper mode
+(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
+(setq auto-mode-alist (cons '("\\.html$" . html-helper-mode) auto-mode-alist))
