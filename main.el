@@ -83,3 +83,7 @@
 ;; html helper mode
 (autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 (setq auto-mode-alist (cons '("\\.html$" . html-helper-mode) auto-mode-alist))
+
+;; fastnav: search for single chars
+(require 'fastnav)
+(global-set-key "\M-s" 'jump-to-char-forward)
