@@ -17,7 +17,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(org-agenda-files (quote ("~/notes/fun.org" "~/notes/work.org" "~/notes/personal.org")))
+ '(org-agenda-files (quote ("~/notes/daily/fun.org" "~/notes/daily/work.org" "~/notes/daily/personal.org")))
  '(org-enforce-todo-dependencies t)
  '(scroll-conservatively 10000)
  '(show-paren-mode t)
