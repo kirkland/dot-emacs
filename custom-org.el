@@ -18,3 +18,7 @@
 			(org-insert-heading)
 			(org-todo)
 			(insert " "))))
+
+;; doesn't show just DONE items
+(setq org-agenda-custom-commands
+      '(("f" tags-tree "comp")))

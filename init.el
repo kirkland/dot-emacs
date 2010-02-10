@@ -85,5 +85,12 @@
 (setq auto-mode-alist (cons '("\\.html$" . html-helper-mode) auto-mode-alist))
 
 ;; fastnav: search for single chars
-(require 'fastnav)
-(global-set-key "\M-s" 'jump-to-char-forward)
+;(require 'fastnav)
+;(global-set-key "\M-s" 'jump-to-char-forward)
+
+;; org mode
+(global-set-key "\C-ca" 'org-agenda)
+
+;; bookmarks
+(setq bookmark-save-flag 1) ; save bookmarks immediately
+(setq bookmark-default-file "~/.emacs.d/bookmarks.bmk")
