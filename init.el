@@ -93,4 +93,4 @@
 
 ;; bookmarks
 (setq bookmark-save-flag 1) ; save bookmarks immediately
-(setq bookmark-default-file "~/.emacs.d/bookmarks.bmk")
+(setq bookmark-default-file "/scratch/rob/emacs/bookmarks.bmk")
