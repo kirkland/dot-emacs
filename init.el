@@ -94,3 +94,15 @@
 ;; bookmarks
 (setq bookmark-save-flag 1) ; save bookmarks immediately
 (setq bookmark-default-file "/scratch/rob/emacs/bookmarks.bmk")
+
+;; HYPER KEY
+(setq w32-pass-apps-to-system nil w32-apps-modifier 'hyper) ;; Menu key
+(global-set-key (kbd "H-p") 'previous-line)
+
+;; TODO: C-c s switches to scratch buffers
+
+;; vim movements
+(global-set-key (kbd "M-h") 'backward-char)
+(global-set-key (kbd "M-l") 'forward-char)
+(global-set-key (kbd "M-j") 'next-line)
+(global-set-key (kbd "M-k") 'previous-line)
