@@ -15,13 +15,11 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode 0)
-; (iswitchb-mode 1) ; superseded by icicles
 
 ;; Load Paths
 ;; ==========
 
 (add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'load-path "~/.emacs.d/emacs-rails-reloaded")
 (add-to-list 'load-path "~/.emacs.d/icicles")
 ;(add-to-list 'load-path "/usr/share/emacs/site-lisp/slime")
 (add-to-list 'load-path "~/.emacs.d/ruby-mode")
@@ -44,14 +42,10 @@
 (load custom-file 'noerror)
 
 (require 'uniquify)
-(require 'rails-autoload)
 (icy-mode)
 
 
-;; below here should be organized more nicely at some point
-
-;; overrides default behavior for naming buffers w/ same filename
-
+;; below here should be organized more nicely at some point, or not
 
 (require 'color-theme)
 (color-theme-initialize)
@@ -59,7 +53,6 @@
 (if (eql nil (getenv "SSH_CLIENT"))
     (color-theme-arjen)
     (color-theme-blue-mood))
-
 
 (put 'dired-find-alternate-file 'disabled nil)
 
@@ -84,10 +77,6 @@
 (autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 (setq auto-mode-alist (cons '("\\.html$" . html-helper-mode) auto-mode-alist))
 
-;; fastnav: search for single chars
-;(require 'fastnav)
-;(global-set-key "\M-s" 'jump-to-char-forward)
-
 ;; org mode
 (global-set-key "\C-ca" 'org-agenda)
 
@@ -108,3 +97,7 @@
 (global-set-key (kbd "M-k") 'previous-line)
 
 (global-set-key (kbd "C-c f") 'find-file-at-point)
+
+;; new rails minor mode
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/rails-minor-mode"))
+(require 'rails)
