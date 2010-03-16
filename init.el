@@ -37,7 +37,7 @@
 (load-file "~/.emacs.d/custom-ruby.el")
 (load-file "~/.emacs.d/snippet.el")
 (load-file "~/.emacs.d/find-recursive.txt")
-(load-library "icicles")  ; slows startup
+(load-library "icicles")
 (load-file "~/.emacs.d/backups.el")
 (setq custom-file "~/.emacs.d/auto-custom.el")
 (load "~/.emacs.d/haskell-mode/haskell-site-file")
@@ -106,3 +106,5 @@
 (global-set-key (kbd "M-l") 'forward-char)
 (global-set-key (kbd "M-j") 'next-line)
 (global-set-key (kbd "M-k") 'previous-line)
+
+(global-set-key (kbd "C-c f") 'find-file-at-point)
