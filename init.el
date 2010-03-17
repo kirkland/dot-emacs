@@ -1,17 +1,20 @@
 ;; if -ergo option is passed, load alternate init file, else regular one
 
-(defvar use-ergo-mode nil)
+(defvar using-ergo-mode nil)
 
-;; (setq command-switch-alist '(("-ergo" . 
-;; 			      (lambda (arg)
-;; 				(setq use-ergo-mode 1)
-;; 				(load-file "~/.emacs.d/init-ergo.el")))))
+(setq command-switch-alist '(("-ergo" . 
+			      (lambda (arg)
+				(load-file "~/.emacs.d/init-ergo.el")))
+			     ("-standard" . 
+			      (lambda (arg)
+				(load-file "~/.emacs.d/init-standard.el")))))
 
-(load-file "~/.emacs.d/init-standard.el")
+;; (add-hook 'after-init-hook '(lambda ()
+;; 			      (load-file "~/.emacs.d/init-standard.el")))
 
 ;; (add-hook 'after-init-hook
 ;;  	  '(lambda ()
-;; 	     (if (null use-ergo-mode)
+;; 	     (if (null using-ergo-mode)
 ;; 		 (setq call-standard 1)
 ;; 	       (setq call-ergo 1))))
 	  
@@ -20,7 +23,7 @@
 
 
 
-;(not (null use-ergo-mode))
+;(not (null using-ergo-mode))
 
 ;(after-init-hook)
 

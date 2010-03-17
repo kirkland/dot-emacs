@@ -1,4 +1,4 @@
-
+(when (null using-ergo-mode)
 
 ;; General Options
 ;; ===============
@@ -104,3 +104,4 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/rails-minor-mode"))
 (require 'rails)
 
+)
