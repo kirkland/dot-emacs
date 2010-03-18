@@ -117,7 +117,7 @@ enviroment variable.  The possible values are:
 (define-key ergoemacs-keymap ergoemacs-isearch-forward-key 'isearch-forward)
 (define-key ergoemacs-keymap ergoemacs-isearch-backward-key 'isearch-backward)
 
-(define-key ergoemacs-keymap ergoemacs-recenter-key 'recenter)
+(define-key ergoemacs-keymap ergoemacs-recenter-key 'recenter-top-bottom)
 
 ;;; MAJOR EDITING COMMANDS
 
