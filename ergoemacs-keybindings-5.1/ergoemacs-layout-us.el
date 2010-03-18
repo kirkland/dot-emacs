@@ -5,10 +5,10 @@
 ;;; CURSOR MOVEMENTS
 
 ;; Single char cursor movement
-(defconst ergoemacs-backward-char-key			(kbd "M-j"))
+(defconst ergoemacs-backward-char-key			(kbd "M-h"))
 (defconst ergoemacs-forward-char-key			(kbd "M-l"))
-(defconst ergoemacs-previous-line-key			(kbd "M-i"))
-(defconst ergoemacs-next-line-key			(kbd "M-k"))
+(defconst ergoemacs-previous-line-key			(kbd "M-k"))
+(defconst ergoemacs-next-line-key			(kbd "M-j"))
 
 ;; Move by word
 (defconst ergoemacs-backward-word-key			(kbd "M-u"))
@@ -19,16 +19,16 @@
 (defconst ergoemacs-forward-paragraph-key		(kbd "M-O"))
 
 ;; Move to beginning/ending of line
-(defconst ergoemacs-move-beginning-of-line-key		(kbd "M-h"))
-(defconst ergoemacs-move-end-of-line-key		(kbd "M-H"))
+(defconst ergoemacs-move-beginning-of-line-key		(kbd "M-H"))
+(defconst ergoemacs-move-end-of-line-key		(kbd "M-L"))
 
 ;; Move by screen (page up/down)
-(defconst ergoemacs-scroll-down-key			(kbd "M-I"))
-(defconst ergoemacs-scroll-up-key			(kbd "M-K"))
+(defconst ergoemacs-scroll-down-key			(kbd "M-K"))
+(defconst ergoemacs-scroll-up-key			(kbd "M-J"))
 
 ;; Move to beginning/ending of file
-(defconst ergoemacs-beginning-of-buffer-key		(kbd "M-J"))
-(defconst ergoemacs-end-of-buffer-key			(kbd "M-L"))
+(defconst ergoemacs-beginning-of-buffer-key		(kbd "M-<"))
+(defconst ergoemacs-end-of-buffer-key			(kbd "M->"))
 
 ;; isearch
 (defconst ergoemacs-isearch-forward-key			(kbd "M-;"))
