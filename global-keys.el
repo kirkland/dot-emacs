@@ -35,11 +35,14 @@
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
 
+;; windows
+(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-2") 'split-window-vertically)
+(global-set-key (kbd "M-3") 'split-window-horizontally)
+
 ;; misc
 (global-set-key (kbd "M-/") 'undo)
 (global-set-key (kbd "M-;") 'isearch-forward)
 (global-set-key (kbd "M-:") 'isearch-backward)
 (global-set-key (kbd "M-t") 'dabbrev-expand)
-(global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "M-2") 'split-window-vertically)
-(global-set-key (kbd "M-3") 'split-window-horizontally)
+(global-set-key (kbd "M-a") 'execute-extended-command)
