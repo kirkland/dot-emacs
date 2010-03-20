@@ -1,8 +1,3 @@
-;; ergo mode
-;(setenv "ERGOEMACS_KEYBOARD_LAYOUT" "us") ; customized by me to make more vim-like
-;(load "~/.emacs.d/ergoemacs-keybindings-5.1/ergoemacs-mode")
-;(ergoemacs-mode 1)
-
 ;; misc options
 (tool-bar-mode -1)
 (scroll-bar-mode 0)
@@ -40,7 +35,7 @@
 (global-set-key (kbd "C-c y") 'clipboard-yank)
 
 ;; shell: M-. acts 'normal'
-(define-key shell-mode-map "\M-." 'comint-insert-previous-argument)
+;(define-key shell-mode-map "\M-." 'comint-insert-previous-argument)
 
 ;; Put autosave files (ie #foo#) in one place, *not*
 ;; scattered all over the file system!
@@ -65,7 +60,6 @@
 (defvar backup-dir (concat "/scratch/" (user-login-name) "/emacs_backups/"))
 (setq backup-directory-alist (list (cons "." backup-dir)))
 
-;; some comment here
 (setq auto-save-list-file-prefix
   (concat "/scratch/" (user-login-name) "/emacs_auto-save-list/.saves-"))
 
