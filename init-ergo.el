@@ -22,6 +22,7 @@
 (setq bookmark-default-file "/scratch/rob/emacs/bookmarks.bmk")
 (global-set-key (kbd "\C-x\C-b") 'bs-show) ; use buffer-selection-menu mode
 (global-set-key "\C-z" 'shell)
+(setq scroll-conservatively 10000) ; scroll one line at a time
 
 ;; colors
 (add-to-list 'load-path ".emacs.d/color-theme-6.6.0")

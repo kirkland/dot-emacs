@@ -101,3 +101,6 @@
 ;; new rails minor mode
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/rails-minor-mode"))
 (require 'rails)
+
+;; new global keys
+(load-file "/home/rob/.emacs.d/global-keys.el")

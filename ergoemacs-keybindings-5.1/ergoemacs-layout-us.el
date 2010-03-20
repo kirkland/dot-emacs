@@ -11,20 +11,20 @@
 (defconst ergoemacs-next-line-key			(kbd "M-j"))
 
 ;; Move by word
-(defconst ergoemacs-backward-word-key			(kbd "M-u"))
-(defconst ergoemacs-forward-word-key			(kbd "M-o"))
+(defconst ergoemacs-backward-word-key			(kbd "M-y"))
+(defconst ergoemacs-forward-word-key			(kbd "M-u"))
 
 ;; Move by paragraph
 (defconst ergoemacs-backward-paragraph-key		(kbd "M-U"))
 (defconst ergoemacs-forward-paragraph-key		(kbd "M-O"))
 
 ;; Move to beginning/ending of line
-(defconst ergoemacs-move-beginning-of-line-key		(kbd "M-H"))
-(defconst ergoemacs-move-end-of-line-key		(kbd "M-L"))
+(defconst ergoemacs-move-beginning-of-line-key		(kbd "M-o"))
+(defconst ergoemacs-move-end-of-line-key		(kbd "M-p"))
 
 ;; Move by screen (page up/down)
-(defconst ergoemacs-scroll-down-key			(kbd "M-K"))
-(defconst ergoemacs-scroll-up-key			(kbd "M-J"))
+(defconst ergoemacs-scroll-down-key			(kbd "M-i"))
+(defconst ergoemacs-scroll-up-key			(kbd "M-u"))
 
 ;; Move to beginning/ending of file
 (defconst ergoemacs-beginning-of-buffer-key		(kbd "M-<"))
@@ -34,7 +34,7 @@
 (defconst ergoemacs-isearch-forward-key			(kbd "M-;"))
 (defconst ergoemacs-isearch-backward-key		(kbd "M-:"))
 
-(defconst ergoemacs-recenter-key			(kbd "M-p"))
+(defconst ergoemacs-recenter-key			(kbd "M-P"))
 
 ;;; MAJOR EDITING COMMANDS
 
