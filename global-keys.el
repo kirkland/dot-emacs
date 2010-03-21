@@ -6,19 +6,19 @@
 (global-set-key (kbd "M-j") 'next-line)
 (global-set-key (kbd "M-k") 'previous-line)
 
-(global-set-key (kbd "M-H") 'delete-backward-char)
-(global-set-key (kbd "M-L") 'delete-char)
+(global-set-key (kbd "M-d") 'delete-backward-char)
+(global-set-key (kbd "M-f") 'delete-char)
 
-(global-set-key (kbd "M-u") 'forward-word)
 (global-set-key (kbd "M-y") 'backward-word)
+(global-set-key (kbd "M-o") 'forward-word)
 
-(global-set-key (kbd "M-U") 'kill-word)
-(global-set-key (kbd "M-Y") 'backward-kill-word)
+(global-set-key (kbd "M-u") 'backward-kill-word)
+(global-set-key (kbd "M-i") 'kill-word)
 
 (global-set-key (kbd "M-e") 'move-end-of-line)
 (global-set-key (kbd "M-w") 'move-beginning-of-line)
 
-(global-set-key (kbd "M-E") 'kill-line)
+(global-set-key (kbd "M-r") 'kill-line)
 
 (global-set-key (kbd "M-p") 'scroll-down)
 (global-set-key (kbd "M-n") 'scroll-up)
@@ -46,3 +46,4 @@
 (global-set-key (kbd "M-:") 'isearch-backward)
 (global-set-key (kbd "M-t") 'dabbrev-expand)
 (global-set-key (kbd "M-a") 'execute-extended-command)
+(global-set-key (kbd "<f5>") (lambda () (interactive) (load-file "global-keys.el")))
