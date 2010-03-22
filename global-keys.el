@@ -11,14 +11,12 @@
 
 (global-set-key (kbd "M-y") 'backward-word)
 (global-set-key (kbd "M-o") 'forward-word)
-
 (global-set-key (kbd "M-u") 'backward-kill-word)
 (global-set-key (kbd "M-i") 'kill-word)
 
-(global-set-key (kbd "M-e") 'move-end-of-line)
-(global-set-key (kbd "M-w") 'move-beginning-of-line)
-
-(global-set-key (kbd "M-r") 'kill-line)
+(global-set-key (kbd "M-e") 'move-beginning-of-line)
+(global-set-key (kbd "M-r") 'move-end-of-line)
+(global-set-key (kbd "M-w") 'kill-line)
 
 (global-set-key (kbd "M-p") 'scroll-down)
 (global-set-key (kbd "M-n") 'scroll-up)
@@ -30,10 +28,13 @@
 (global-set-key (kbd "M-x") 'kill-region)
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "M-b") 'yank-pop)
 
-;; files
+;; files / buffers
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-b") 'bs-show)
+(global-set-key (kbd "C-w") 'close-current-buffer)
 
 ;; windows
 (global-set-key (kbd "M-1") 'delete-other-windows)
