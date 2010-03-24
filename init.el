@@ -26,7 +26,6 @@
 (setq bookmark-default-file "/scratch/rob/emacs/bookmarks.bmk")
 (setq scroll-conservatively 10000) ; scroll one line at a time
 
-
 ;; colors
 
 ;; (require 'color-theme)
