@@ -1,3 +1,12 @@
+(require 'cl)
+
+;; paths
+(mapcar (lambda (dir) (add-to-list 'load-path dir))
+	'(
+	  "~/.emacs"
+	  "~/.emacs.d/color-theme-6.6.0"
+	  ))
+
 ;; misc options
 (tool-bar-mode -1)
 (scroll-bar-mode 0)
@@ -15,25 +24,20 @@
 (put 'dired-find-alternate-file 'disabled nil)
 (setq bookmark-save-flag 1) ; save bookmarks immediately
 (setq bookmark-default-file "/scratch/rob/emacs/bookmarks.bmk")
-(global-set-key (kbd "\C-x\C-b") 'bs-show) ; use buffer-selection-menu mode
-(global-set-key "\C-z" 'shell)
 (setq scroll-conservatively 10000) ; scroll one line at a time
-(add-to-list 'load-path ".emacs.d")
+
 
 ;; colors
-(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
-(require 'color-theme)
-(color-theme-initialize)
-(if (eql nil (getenv "SSH_CLIENT"))
-    (color-theme-arjen)
-    (color-theme-blue-mood))
+
+;; (require 'color-theme)
+;; (color-theme-initialize)
+;; (if (eql nil (getenv "SSH_CLIENT"))
+;;     (color-theme-arjen)
+;;     (color-theme-blue-mood))
 
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
         "Prevent annoying \"Active processes exist\" query when you quit Emacs."
         (flet ((process-list ())) ad-do-it))
-
-;; global shortcuts
-(global-set-key (kbd "C-c y") 'clipboard-yank)
 
 ;; shell: M-. acts 'normal'
 ;(define-key shell-mode-map "\M-." 'comint-insert-previous-argument)

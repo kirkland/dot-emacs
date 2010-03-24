@@ -1,5 +1,3 @@
-;; inspired by ergoemacs, except I want to make global bindings, not a minor mode. 
-
 ;; basic movement and editing 
 (global-set-key (kbd "M-h") 'backward-char)
 (global-set-key (kbd "M-l") 'forward-char)
@@ -48,3 +46,7 @@
 (global-set-key (kbd "M-t") 'dabbrev-expand)
 (global-set-key (kbd "M-a") 'execute-extended-command)
 (global-set-key (kbd "<f5>") (lambda () (interactive) (load-file "global-keys.el")))
+
+(global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
+(global-set-key (kbd "C-z") 'shell)
+(global-set-key (kbd "C-c y") 'clipboard-yank)
