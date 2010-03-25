@@ -7,6 +7,14 @@
 	  "~/.emacs.d/color-theme-6.6.0"
 	  ))
 
+(defvar emacs-scratch (if (eq system-type 'gnu/linux)
+			  "/scratch/rob/emacs/"
+			"c:\tmp")) ;; is this correct place for windows stuff?
+(make-directory emacs-scratch t)
+
+(setq custom-file "~/.emacs.d/auto-custom.el")
+(load custom-file)
+
 ;; misc options
 (tool-bar-mode -1)
 (scroll-bar-mode 0)
@@ -23,16 +31,15 @@
 (put 'erase-buffer 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 (setq bookmark-save-flag 1) ; save bookmarks immediately
-(setq bookmark-default-file "/scratch/rob/emacs/bookmarks.bmk")
+(setq bookmark-default-file (concat emacs-scratch "bookmarks.bmk"))
 (setq scroll-conservatively 10000) ; scroll one line at a time
 
 ;; colors
-
-;; (require 'color-theme)
-;; (color-theme-initialize)
-;; (if (eql nil (getenv "SSH_CLIENT"))
-;;     (color-theme-arjen)
-;;     (color-theme-blue-mood))
+(require 'color-theme)
+(color-theme-initialize)
+(if (eql nil (getenv "SSH_CLIENT"))
+    (color-theme-arjen)
+    (color-theme-blue-mood))
 
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
         "Prevent annoying \"Active processes exist\" query when you quit Emacs."
@@ -44,7 +51,7 @@
 ;; Put autosave files (ie #foo#) in one place, *not*
 ;; scattered all over the file system!
 (defvar autosave-dir
- (concat "/scratch/" (user-login-name) "/emacs_autosaves/"))
+ (concat emacs-scratch "autosaves/"))
 
 (make-directory autosave-dir t)
 
@@ -61,11 +68,11 @@
 ;; Put backup files (ie foo~) in one place too. (The backup-directory-alist
 ;; list contains regexp=>directory mappings; filenames matching a regexp are
 ;; backed up in the corresponding directory. Emacs will mkdir it if necessary.)
-(defvar backup-dir (concat "/scratch/" (user-login-name) "/emacs_backups/"))
+(defvar backup-dir (concat emacs-scratch "backups/"))
 (setq backup-directory-alist (list (cons "." backup-dir)))
 
 (setq auto-save-list-file-prefix
-  (concat "/scratch/" (user-login-name) "/emacs_auto-save-list/.saves-"))
+  (concat emacs-scratch "auto-save-list/.saves-"))
 
 ;; org mode customizations
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -94,6 +101,6 @@
       '(("f" tags-tree "comp")))
 
 ;; new global keys
-(load-file "/home/rob/.emacs.d/global-keys.el")
+(load-file "~/.emacs.d/global-keys.el")
 
 (shell)

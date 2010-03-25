@@ -12,9 +12,9 @@
 (global-set-key (kbd "M-u") 'backward-kill-word)
 (global-set-key (kbd "M-i") 'kill-word)
 
-(global-set-key (kbd "M-e") 'move-beginning-of-line)
-(global-set-key (kbd "M-r") 'move-end-of-line)
-(global-set-key (kbd "M-w") 'kill-line)
+(global-set-key (kbd "M-w") 'move-beginning-of-line)
+(global-set-key (kbd "M-e") 'move-end-of-line)
+(global-set-key (kbd "M-r") 'kill-line)
 
 (global-set-key (kbd "M-p") 'scroll-down)
 (global-set-key (kbd "M-n") 'scroll-up)
@@ -45,7 +45,7 @@
 (global-set-key (kbd "M-:") 'isearch-backward)
 (global-set-key (kbd "M-t") 'dabbrev-expand)
 (global-set-key (kbd "M-a") 'execute-extended-command)
-(global-set-key (kbd "<f5>") (lambda () (interactive) (load-file "global-keys.el")))
+(global-set-key (kbd "<f5>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
 
 (global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
 (global-set-key (kbd "C-z") 'shell)
