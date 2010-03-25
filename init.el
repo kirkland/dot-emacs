@@ -5,6 +5,7 @@
 	'(
 	  "~/.emacs"
 	  "~/.emacs.d/color-theme-6.6.0"
+	  "~/.emacs.d/yasnippet-0.6.1c/"
 	  ))
 
 (defvar emacs-scratch (if (eq system-type 'gnu/linux)
@@ -99,6 +100,13 @@
 ;; doesn't show just DONE items
 (setq org-agenda-custom-commands
       '(("f" tags-tree "comp")))
+
+;; yasnippet
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/yasnippet-0.6.1c/snippets")
+(setq yas/root-directory "~/.emacs.d/mysnippets")
+(yas/load-directory yas/root-directory)
 
 ;; new global keys
 (load-file "~/.emacs.d/global-keys.el")
