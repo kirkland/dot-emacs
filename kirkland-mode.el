@@ -1,24 +1,33 @@
 (defvar kirkland-minor-mode-map (make-keymap) "kirkland-minor-mode keymap.")
 
+;; these bindings are redundant, or I want to force myself to not use them
+(global-unset-key (kbd "M-d"))
+(global-unset-key (kbd "M-e"))
+(global-unset-key (kbd "M-f"))
+(global-unset-key (kbd "M-w"))
+(global-unset-key (kbd "M-."))
+(global-unset-key (kbd "M-,"))
+
 ;; basic movement and editing 
 (define-key kirkland-minor-mode-map (kbd "M-h") 'backward-char)
 (define-key kirkland-minor-mode-map (kbd "M-l") 'forward-char)
 (define-key kirkland-minor-mode-map (kbd "M-j") 'next-line)
 (define-key kirkland-minor-mode-map (kbd "M-k") 'previous-line)
-(define-key kirkland-minor-mode-map (kbd "M-d") 'delete-backward-char)
-(define-key kirkland-minor-mode-map (kbd "M-f") 'delete-char)
+(define-key kirkland-minor-mode-map (kbd "M-g") 'delete-backward-char)
+(define-key kirkland-minor-mode-map (kbd "M-;") 'delete-char)
 
 (define-key kirkland-minor-mode-map (kbd "M-y") 'backward-word)
 (define-key kirkland-minor-mode-map (kbd "M-o") 'forward-word)
 (define-key kirkland-minor-mode-map (kbd "M-u") 'backward-kill-word)
 (define-key kirkland-minor-mode-map (kbd "M-i") 'kill-word)
 
-(define-key kirkland-minor-mode-map (kbd "M-w") 'move-beginning-of-line)
-(define-key kirkland-minor-mode-map (kbd "M-e") 'move-end-of-line)
+(define-key kirkland-minor-mode-map (kbd "M-n") 'move-beginning-of-line)
+(define-key kirkland-minor-mode-map (kbd "M-m") 'move-end-of-line)
 (define-key kirkland-minor-mode-map (kbd "M-r") 'kill-line)
 
-(define-key kirkland-minor-mode-map (kbd "M-p") 'scroll-down)
-(define-key kirkland-minor-mode-map (kbd "M-n") 'scroll-up)
+(define-key kirkland-minor-mode-map (kbd "M-[") 'scroll-down)
+(define-key kirkland-minor-mode-map (kbd "M-'") 'scroll-up)
+(define-key kirkland-minor-mode-map (kbd "M-b") 'newline)
 
 ;; killing, yanking
 (define-key kirkland-minor-mode-map (kbd "M-SPC") 'set-mark-command)
@@ -27,13 +36,12 @@
 (define-key kirkland-minor-mode-map (kbd "M-x") 'kill-region)
 (define-key kirkland-minor-mode-map (kbd "M-c") 'kill-ring-save)
 (define-key kirkland-minor-mode-map (kbd "M-v") 'yank)
-(define-key kirkland-minor-mode-map (kbd "M-b") 'yank-pop)
+;(define-key kirkland-minor-mode-map (kbd "M-b") 'yank-pop)
 
 ;; files / buffers
 (define-key kirkland-minor-mode-map (kbd "C-o") 'find-file)
 (define-key kirkland-minor-mode-map (kbd "C-s") 'save-buffer)
-(define-key kirkland-minor-mode-map (kbd "C-b") 'bs-show)
-(define-key kirkland-minor-mode-map (kbd "C-w") 'close-current-buffer)
+(define-key kirkland-minor-mode-map (kbd "C-b") 'switch-to-buffer)
 
 ;; windows
 (define-key kirkland-minor-mode-map (kbd "M-0") 'delete-window)
@@ -43,11 +51,14 @@
 
 ;; misc
 (define-key kirkland-minor-mode-map (kbd "M-/") 'undo)
-(define-key kirkland-minor-mode-map (kbd "M-;") 'isearch-forward)
-(define-key kirkland-minor-mode-map (kbd "M-:") 'isearch-backward)
+(define-key kirkland-minor-mode-map (kbd "M-f") 'isearch-forward)
+(define-key kirkland-minor-mode-map (kbd "M-F") 'isearch-backward)
 (define-key kirkland-minor-mode-map (kbd "M-t") 'dabbrev-expand)
 (define-key kirkland-minor-mode-map (kbd "M-a") 'execute-extended-command)
 (define-key kirkland-minor-mode-map (kbd "<f5>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
+
+(define-key isearch-mode-map (kbd "M-f") 'isearch-repeat-forward)
+(define-key isearch-mode-map (kbd "M-F") 'isearch-repeat-backward)
 
 (define-key kirkland-minor-mode-map (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
 (define-key kirkland-minor-mode-map (kbd "C-z") 'shell)

@@ -109,6 +109,6 @@
 (yas/load-directory yas/root-directory)
 
 ;; new global keys
-(load-file "~/.emacs.d/global-keys.el")
+(load-file "~/.emacs.d/kirkland-mode.el")
 
 (shell)
