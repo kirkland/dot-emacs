@@ -3,7 +3,7 @@
 ;; paths
 (mapcar (lambda (dir) (add-to-list 'load-path dir))
 	'(
-	  "~/.emacs"
+	  "~/.emacs.d"
 	  "~/.emacs.d/color-theme-6.6.0"
 	  "~/.emacs.d/yasnippet-0.6.1c/"
 	  ))
@@ -107,6 +107,10 @@
 (yas/load-directory "~/.emacs.d/yasnippet-0.6.1c/snippets")
 (setq yas/root-directory "~/.emacs.d/mysnippets")
 (yas/load-directory yas/root-directory)
+
+(require 'zoom-frm)
+(global-set-key (kbd "C-=") 'zoom-in)
+(global-set-key (kbd "C--") 'zoom-out)
 
 ;; new global keys
 (load-file "~/.emacs.d/kirkland-mode.el")
