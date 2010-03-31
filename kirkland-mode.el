@@ -9,33 +9,32 @@
 (global-unset-key (kbd "M-,"))
 
 ;; basic movement and editing 
-(define-key kirkland-minor-mode-map (kbd "M-h") 'backward-char)
-(define-key kirkland-minor-mode-map (kbd "M-l") 'forward-char)
-(define-key kirkland-minor-mode-map (kbd "M-j") 'next-line)
-(define-key kirkland-minor-mode-map (kbd "M-k") 'previous-line)
-(define-key kirkland-minor-mode-map (kbd "M-g") 'delete-backward-char)
-(define-key kirkland-minor-mode-map (kbd "M-;") 'delete-char)
+(define-key kirkland-minor-mode-map (kbd "M-j") 'backward-char)
+(define-key kirkland-minor-mode-map (kbd "M-;") 'forward-char)
+(define-key kirkland-minor-mode-map (kbd "M-k") 'next-line)
+(define-key kirkland-minor-mode-map (kbd "M-l") 'previous-line)
+(define-key kirkland-minor-mode-map (kbd "M-h") 'delete-backward-char)
+(define-key kirkland-minor-mode-map (kbd "M-'") 'delete-char)
 
-(define-key kirkland-minor-mode-map (kbd "M-y") 'backward-word)
-(define-key kirkland-minor-mode-map (kbd "M-o") 'forward-word)
-(define-key kirkland-minor-mode-map (kbd "M-u") 'backward-kill-word)
-(define-key kirkland-minor-mode-map (kbd "M-i") 'kill-word)
+(define-key kirkland-minor-mode-map (kbd "M-d") 'backward-word)
+(define-key kirkland-minor-mode-map (kbd "M-f") 'forward-word)
+(define-key kirkland-minor-mode-map (kbd "M-e") 'backward-kill-word)
+(define-key kirkland-minor-mode-map (kbd "M-r") 'kill-word)
 
-(define-key kirkland-minor-mode-map (kbd "M-n") 'move-beginning-of-line)
-(define-key kirkland-minor-mode-map (kbd "M-m") 'move-end-of-line)
-(define-key kirkland-minor-mode-map (kbd "M-r") 'kill-line)
+(define-key kirkland-minor-mode-map (kbd "M-u") 'move-beginning-of-line)
+(define-key kirkland-minor-mode-map (kbd "M-i") 'move-end-of-line)
+(define-key kirkland-minor-mode-map (kbd "M-y") 'kill-line)
 
-(define-key kirkland-minor-mode-map (kbd "M-[") 'scroll-down)
-(define-key kirkland-minor-mode-map (kbd "M-'") 'scroll-up)
-(define-key kirkland-minor-mode-map (kbd "M-b") 'newline)
+(define-key kirkland-minor-mode-map (kbd "C-f") 'scroll-down)
+(define-key kirkland-minor-mode-map (kbd "C-v") 'scroll-up)
 
 ;; killing, yanking
-(define-key kirkland-minor-mode-map (kbd "M-SPC") 'set-mark-command)
-(define-key kirkland-minor-mode-map (kbd "M-s") (lambda () (interactive) (other-window 1)))
-(define-key kirkland-minor-mode-map (kbd "M-S") (lambda () (interactive) (other-window -1)))
-(define-key kirkland-minor-mode-map (kbd "M-x") 'kill-region)
-(define-key kirkland-minor-mode-map (kbd "M-c") 'kill-ring-save)
 (define-key kirkland-minor-mode-map (kbd "M-v") 'yank)
+(define-key kirkland-minor-mode-map (kbd "M-c") 'kill-ring-save)
+(define-key kirkland-minor-mode-map (kbd "M-SPC") 'set-mark-command)
+(define-key kirkland-minor-mode-map (kbd "M-RET") 'newline)
+(define-key kirkland-minor-mode-map (kbd "M-x") 'kill-region)
+
 ;(define-key kirkland-minor-mode-map (kbd "M-b") 'yank-pop)
 
 ;; files / buffers
@@ -44,6 +43,7 @@
 (define-key kirkland-minor-mode-map (kbd "C-b") 'switch-to-buffer)
 
 ;; windows
+(define-key kirkland-minor-mode-map (kbd "M-s") (lambda () (interactive) (other-window 1)))
 (define-key kirkland-minor-mode-map (kbd "M-0") 'delete-window)
 (define-key kirkland-minor-mode-map (kbd "M-1") 'delete-other-windows)
 (define-key kirkland-minor-mode-map (kbd "M-2") 'split-window-vertically)
@@ -51,7 +51,7 @@
 
 ;; misc
 (define-key kirkland-minor-mode-map (kbd "M-/") 'undo)
-(define-key kirkland-minor-mode-map (kbd "M-f") 'isearch-forward)
+;(define-key kirkland-minor-mode-map (kbd "M-f") 'isearch-forward)
 (define-key kirkland-minor-mode-map (kbd "M-F") 'isearch-backward)
 (define-key kirkland-minor-mode-map (kbd "M-t") 'dabbrev-expand)
 (define-key kirkland-minor-mode-map (kbd "M-a") 'execute-extended-command)
