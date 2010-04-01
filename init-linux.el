@@ -1,13 +1,5 @@
 (defvar emacs-scratch "/scratch/rob/emacs/")
 
-;; colors
-(require 'color-theme)
-(color-theme-initialize)
-(if (eql nil (getenv "SSH_CLIENT"))
-    (color-theme-arjen)
-  (if (eq system-type 'gnu/linux)
-      (color-theme-blue-mood)))
-
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -17,3 +9,12 @@
  '(font-lock-builtin-face ((((type tty) (class color)) (:foreground "yellow" :weight light))))
  '(link ((((class color) (background light)) (:foreground "cyan" :underline t))))
  '(minibuffer-prompt ((t (:foreground "cyan" :family "default")))))
+
+;; colors
+(require 'color-theme)
+(color-theme-initialize)
+(if (eql nil (getenv "SSH_CLIENT"))
+    (color-theme-arjen)
+  (if (eq system-type 'gnu/linux)
+      (color-theme-blue-mood)))
+
