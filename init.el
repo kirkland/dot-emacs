@@ -8,9 +8,12 @@
 	  "~/.emacs.d/yasnippet-0.6.1c/"
 	  ))
 
-(defvar emacs-scratch (if (eq system-type 'gnu/linux)
-			  "/scratch/rob/emacs/"
-			"c:\tmp")) ;; is this correct place for windows stuff?
+;; maybe put this stuff in their own files?
+(if (eq system-type 'gnu/linux)
+    (load-file "init-linux.el")
+  (load-file "~/.emacs.d/init-windows.el")) ; something wrong with load path on windows?
+    
+
 (make-directory emacs-scratch t)
 
 (setq custom-file "~/.emacs.d/auto-custom.el")
@@ -34,13 +37,6 @@
 (setq bookmark-save-flag 1) ; save bookmarks immediately
 (setq bookmark-default-file (concat emacs-scratch "bookmarks.bmk"))
 (setq scroll-conservatively 10000) ; scroll one line at a time
-
-;; colors
-(require 'color-theme)
-(color-theme-initialize)
-(if (eql nil (getenv "SSH_CLIENT"))
-    (color-theme-arjen)
-    (color-theme-blue-mood))
 
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
         "Prevent annoying \"Active processes exist\" query when you quit Emacs."
