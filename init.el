@@ -15,6 +15,7 @@
     (load-file (concat emacs-root "init-linux.el"))
   (load-file (concat emacs-root "init-windows.el")))
 
+(defconst emacs-scratch (concat (getenv "HOME") "/.scratch-emacs/"))
 (make-directory emacs-scratch t)
 
 (setq custom-file "~/.emacs.d/auto-custom.el")
