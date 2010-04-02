@@ -1,18 +1,19 @@
 (require 'cl)
 
 ;; paths
-(mapcar (lambda (dir) (add-to-list 'load-path dir))
-	'(
-	  "~/.emacs.d"
-	  "~/.emacs.d/color-theme-6.6.0"
-	  "~/.emacs.d/yasnippet-0.6.1c/"
-	  ))
+(defconst emacs-root (concat (getenv "HOME") "/.emacs.d/"))
 
-;; maybe put this stuff in their own files?
+(mapcar (lambda (dir) (add-to-list 'load-path dir))
+	(list
+	 emacs-root
+	 (concat emacs-root "color-theme-6.6.0")
+	 (concat emacs-root "yasnippet-0.6.1c")
+	 ))
+
+;; platform dependent
 (if (eq system-type 'gnu/linux)
-    (load-file "init-linux.el")
-  (load-file "~/.emacs.d/init-windows.el")) ; something wrong with load path on windows?
-    
+    (load-file (concat emacs-root "init-linux.el"))
+  (load-file (concat emacs-root "init-windows.el")))
 
 (make-directory emacs-scratch t)
 
@@ -28,7 +29,7 @@
 (setq column-number-mode t)
 (setq find-file-visit-truename t)
 (ansi-color-for-comint-mode-on) ; ?
-(show-paren-mode)
+(show-paren-mode 1)
 (setq blink-matching-delay 0.5) ; ?
 (global-font-lock-mode 1) ; aka syntax highlighting
 (transient-mark-mode 1) ; active region is highlighted
