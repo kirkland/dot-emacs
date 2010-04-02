@@ -11,7 +11,7 @@
 	 ))
 
 ;; platform dependent
-(if (eq system-type 'gnu/linux)
+(if (eql system-type 'gnu/linux)
     (load-file (concat emacs-root "init-linux.el"))
   (load-file (concat emacs-root "init-windows.el")))
 
@@ -100,11 +100,12 @@
       '(("f" tags-tree "comp")))
 
 ;; yasnippet
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/yasnippet-0.6.1c/snippets")
-(setq yas/root-directory "~/.emacs.d/mysnippets")
-(yas/load-directory yas/root-directory)
+(unless (eq emacs-major-version 21)
+  (require 'yasnippet)
+  (yas/initialize)
+  (yas/load-directory "~/.emacs.d/yasnippet-0.6.1c/snippets")
+  (setq yas/root-directory "~/.emacs.d/mysnippets")
+  (yas/load-directory yas/root-directory))
 
 (require 'zoom-frm)
 (global-set-key (kbd "C-=") 'zoom-in)
