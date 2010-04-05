@@ -12,7 +12,8 @@
 (require 'color-theme)
 (color-theme-initialize)
 (if (or (eql nil (getenv "SSH_CLIENT"))
-	(eql emacs-major-version 21))   ;; hack for deutsch...
+	(eql emacs-major-version 21)
+	(eql emacs-major-version 22))
     (color-theme-arjen)
   (if (eq system-type 'gnu/linux)
       (color-theme-blue-mood)))
