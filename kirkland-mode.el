@@ -24,7 +24,7 @@
 
 (define-key kirkland-minor-mode-map (kbd "M-o") 'move-beginning-of-line)
 (define-key kirkland-minor-mode-map (kbd "M-p") 'move-end-of-line)
-(define-key kirkland-minor-mode-map (kbd "M-g") 'kill-line)
+(define-key kirkland-minor-mode-map (kbd "M-t") 'kill-line)
 
 (define-key kirkland-minor-mode-map (kbd "C-f") 'scroll-down)
 (define-key kirkland-minor-mode-map (kbd "C-v") 'scroll-up)
@@ -58,7 +58,7 @@
 
 ;; misc
 (define-key kirkland-minor-mode-map (kbd "M-/") 'undo)
-(define-key kirkland-minor-mode-map (kbd "M-t") 'dabbrev-expand)
+(define-key kirkland-minor-mode-map (kbd "M-g") 'dabbrev-expand)
 (define-key kirkland-minor-mode-map (kbd "M-a") 'execute-extended-command)
 (define-key kirkland-minor-mode-map (kbd "<f5>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
 (define-key kirkland-minor-mode-map (kbd "C-e") 'eval-last-sexp)
