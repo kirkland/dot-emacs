@@ -58,7 +58,7 @@
 
 ;; misc
 (define-key kirkland-minor-mode-map (kbd "M-/") 'undo)
-(define-key kirkland-minor-mode-map (kbd "M-g") 'dabbrev-expand)
+(define-key kirkland-minor-mode-map (kbd "M-h") 'dabbrev-expand)
 (define-key kirkland-minor-mode-map (kbd "M-a") 'execute-extended-command)
 (define-key kirkland-minor-mode-map (kbd "<f5>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
 (define-key kirkland-minor-mode-map (kbd "C-e") 'eval-last-sexp)
