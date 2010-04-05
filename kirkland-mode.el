@@ -24,7 +24,7 @@
 
 (define-key kirkland-minor-mode-map (kbd "M-o") 'move-beginning-of-line)
 (define-key kirkland-minor-mode-map (kbd "M-p") 'move-end-of-line)
-(define-key kirkland-minor-mode-map (kbd "M-[") 'kill-line)
+(define-key kirkland-minor-mode-map (kbd "M-g") 'kill-line)
 
 (define-key kirkland-minor-mode-map (kbd "C-f") 'scroll-down)
 (define-key kirkland-minor-mode-map (kbd "C-v") 'scroll-up)
