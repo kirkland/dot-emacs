@@ -44,9 +44,6 @@
         "Prevent annoying \"Active processes exist\" query when you quit Emacs."
         (flet ((process-list ())) ad-do-it))
 
-;; shell: M-. acts 'normal'
-;(define-key shell-mode-map "\M-." 'comint-insert-previous-argument)
-
 ;; Put autosave files (ie #foo#) in one place, *not*
 ;; scattered all over the file system!
 (defvar autosave-dir
@@ -115,3 +112,8 @@
 (load-file "~/.emacs.d/kirkland-mode.el")
 
 (shell)
+
+;; shell customizations, won't load before shell is started, hmm...
+(define-key shell-mode-map (kbd "M-.") 'comint-insert-previous-argument)
+(define-key shell-mode-map (kbd "C-p") 'comint-previous-input)
+(define-key shell-mode-map (kbd "C-n") 'comint-next-input)

@@ -41,7 +41,7 @@
 (define-key kirkland-minor-mode-map (kbd "C-o") 'find-file)
 (define-key kirkland-minor-mode-map (kbd "C-s") 'save-buffer)
 (define-key kirkland-minor-mode-map (kbd "C-b") 'switch-to-buffer)
-(define-key kirkland-minor-mode-map (kbd "C-n") 'bs-show)
+;(define-key kirkland-minor-mode-map (kbd "C-n") 'bs-show)
 
 ;; windows
 (define-key kirkland-minor-mode-map (kbd "M-s") (lambda () (interactive) (other-window 1)))
