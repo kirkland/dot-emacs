@@ -37,12 +37,6 @@
 (define-key kirkland-minor-mode-map (kbd "M-RET") 'newline)
 (define-key kirkland-minor-mode-map (kbd "M-x") 'kill-region)
 
-;; files / buffers
-(define-key kirkland-minor-mode-map (kbd "C-o") 'find-file)
-(define-key kirkland-minor-mode-map (kbd "C-s") 'save-buffer)
-(define-key kirkland-minor-mode-map (kbd "C-b") 'switch-to-buffer)
-;(define-key kirkland-minor-mode-map (kbd "C-n") 'bs-show)
-
 ;; windows
 (define-key kirkland-minor-mode-map (kbd "M-s") (lambda () (interactive) (other-window 1)))
 (define-key kirkland-minor-mode-map (kbd "M-0") 'delete-window)
@@ -60,12 +54,6 @@
 (define-key kirkland-minor-mode-map (kbd "M-/") 'undo)
 (define-key kirkland-minor-mode-map (kbd "M-h") 'dabbrev-expand)
 (define-key kirkland-minor-mode-map (kbd "M-a") 'execute-extended-command)
-(define-key kirkland-minor-mode-map (kbd "<f5>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
-(define-key kirkland-minor-mode-map (kbd "C-e") 'eval-last-sexp)
-
-(define-key kirkland-minor-mode-map (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
-(define-key kirkland-minor-mode-map (kbd "C-z") 'shell)
-(define-key kirkland-minor-mode-map (kbd "C-c y") 'clipboard-yank)
 
 (define-minor-mode kirkland-minor-mode
   "A minor mode so that my key settings aren't shadowed by other major/minor modes"

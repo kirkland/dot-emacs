@@ -111,6 +111,17 @@
 ;; new global keys
 (load-file "~/.emacs.d/kirkland-mode.el")
 
+;; misc global bindings
+(global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
+(global-set-key (kbd "C-e") 'eval-last-sexp)
+(global-set-key (kbd "<f5>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
+(global-set-key (kbd "C-z") 'shell)
+(global-set-key (kbd "C-c y") 'clipboard-yank)
+(define-key kirkland-minor-mode-map (kbd "C-o") 'find-file)
+(define-key kirkland-minor-mode-map (kbd "C-s") 'save-buffer)
+(define-key kirkland-minor-mode-map (kbd "C-b") 'switch-to-buffer)
+;(define-key kirkland-minor-mode-map (kbd "C-n") 'bs-show) ; still need something good for this
+
 (shell)
 
 ;; shell customizations, won't load before shell is started, hmm...
