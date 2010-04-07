@@ -22,8 +22,8 @@
 (load custom-file)
 
 ;; misc options
-(tool-bar-mode -1)
-(scroll-bar-mode 0)
+(and (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(and (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
 (menu-bar-mode -1)
 (setq inhibit-startup-message t)
 (setq enable-recursive-minibuffers t)
