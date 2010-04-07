@@ -117,14 +117,18 @@
 (global-set-key (kbd "<f5>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-c y") 'clipboard-yank)
-(define-key kirkland-minor-mode-map (kbd "C-o") 'find-file)
-(define-key kirkland-minor-mode-map (kbd "C-s") 'save-buffer)
-(define-key kirkland-minor-mode-map (kbd "C-b") 'switch-to-buffer)
+(global-set-key (kbd "C-o") 'find-file)
+(global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-b") 'switch-to-buffer)
+(global-set-key (kbd "C-k") 'kill-this-buffer)
+(global-set-key (kbd "C-c 9") 'comment-region)
+(global-set-key (kbd "C-c 0") 'uncomment-region)
 ;(define-key kirkland-minor-mode-map (kbd "C-n") 'bs-show) ; still need something good for this
 
-(shell)
+;; shell customizations
+(add-hook 'shell-mode-hook (lambda ()
+  (define-key shell-mode-map (kbd "M-.") 'comint-insert-previous-argument)
+  (define-key shell-mode-map (kbd "C-p") 'comint-previous-input)
+  (define-key shell-mode-map (kbd "C-n") 'comint-next-input)))
 
-;; shell customizations, won't load before shell is started, hmm...
-(define-key shell-mode-map (kbd "M-.") 'comint-insert-previous-argument)
-(define-key shell-mode-map (kbd "C-p") 'comint-previous-input)
-(define-key shell-mode-map (kbd "C-n") 'comint-next-input)
+(shell)
