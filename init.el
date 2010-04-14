@@ -108,6 +108,8 @@
 (global-set-key (kbd "C-=") 'zoom-in)
 (global-set-key (kbd "C--") 'zoom-out)
 
+(require 'bookmark+)
+
 ;; new global keys
 (load-file "~/.emacs.d/kirkland-mode.el")
 
@@ -120,10 +122,13 @@
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-b") 'switch-to-buffer)
-(global-set-key (kbd "C-k") 'kill-this-buffer)
+(global-set-key (kbd "C-k") 'kill-buffer)
 (global-set-key (kbd "C-c 9") 'comment-region)
 (global-set-key (kbd "C-c 0") 'uncomment-region)
 ;(define-key kirkland-minor-mode-map (kbd "C-n") 'bs-show) ; still need something good for this
+(global-set-key (kbd "C-n") 'next-buffer)
+(global-set-key (kbd "C-p") 'previous-buffer)
+(global-set-key (kbd "M-g") 'keyboard-quit)
 
 ;; shell customizations
 (add-hook 'shell-mode-hook (lambda ()

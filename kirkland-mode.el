@@ -29,6 +29,9 @@
 (define-key kirkland-minor-mode-map (kbd "C-f") 'scroll-down)
 (define-key kirkland-minor-mode-map (kbd "C-v") 'scroll-up)
 
+(define-key kirkland-minor-mode-map (kbd "M-m") 'forward-sexp)
+(define-key kirkland-minor-mode-map (kbd "M-n") 'backward-sexp)
+
 ;; killing, yanking
 (define-key kirkland-minor-mode-map (kbd "M-v") 'yank)
 (define-key kirkland-minor-mode-map (kbd "M-b") 'yank-pop)
@@ -37,7 +40,7 @@
 (define-key kirkland-minor-mode-map (kbd "M-RET") 'newline)
 (define-key kirkland-minor-mode-map (kbd "M-x") 'kill-region)
 
-;; windows
+;; windows and buffers
 (define-key kirkland-minor-mode-map (kbd "M-s") (lambda () (interactive) (other-window 1)))
 (define-key kirkland-minor-mode-map (kbd "M-0") 'delete-window)
 (define-key kirkland-minor-mode-map (kbd "M-1") 'delete-other-windows)
