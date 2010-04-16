@@ -8,6 +8,8 @@
 	 emacs-root
 	 (concat emacs-root "color-theme-6.6.0")
 	 (concat emacs-root "yasnippet-0.6.1c")
+	 (concat emacs-root "emacs-rails-reloaded") 
+	 (concat emacs-root "ruby-mode")
 	 ))
 
 ;; platform dependent
@@ -109,6 +111,7 @@
 (global-set-key (kbd "C--") 'zoom-out)
 
 (require 'bookmark+)
+(require 'rails-autoload)
 
 ;; new global keys
 (load-file "~/.emacs.d/kirkland-mode.el")
