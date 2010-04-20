@@ -8,6 +8,12 @@
 (global-unset-key (kbd "M-."))
 (global-unset-key (kbd "M-,"))
 (global-unset-key (kbd "C-w"))
+(global-unset-key (kbd "M-4"))
+(global-unset-key (kbd "M-5"))
+(global-unset-key (kbd "M-6"))
+(global-unset-key (kbd "M-7"))
+(global-unset-key (kbd "M-8"))
+(global-unset-key (kbd "M-9"))
 
 ;; basic movement and editing 
 (define-key kirkland-minor-mode-map (kbd "M-j") 'backward-char)
@@ -46,6 +52,7 @@
 (define-key kirkland-minor-mode-map (kbd "M-1") 'delete-other-windows)
 (define-key kirkland-minor-mode-map (kbd "M-2") 'split-window-vertically)
 (define-key kirkland-minor-mode-map (kbd "M-3") 'split-window-horizontally)
+(define-key kirkland-minor-mode-map (kbd "C-k") 'kill-buffer)
 
 ;; search
 (define-key kirkland-minor-mode-map (kbd "M-w") 'isearch-forward)

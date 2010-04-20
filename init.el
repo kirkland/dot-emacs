@@ -119,13 +119,12 @@
 ;; misc global bindings
 (global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
 (global-set-key (kbd "C-e") 'eval-last-sexp)
-(global-set-key (kbd "<f5>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
+(global-set-key (kbd "<f9>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-c y") 'clipboard-yank)
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-b") 'switch-to-buffer)
-(global-set-key (kbd "C-k") 'kill-buffer)
 (global-set-key (kbd "C-c 9") 'comment-region)
 (global-set-key (kbd "C-c 0") 'uncomment-region)
 ;(define-key kirkland-minor-mode-map (kbd "C-n") 'bs-show) ; still need something good for this
