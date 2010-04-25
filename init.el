@@ -41,6 +41,8 @@
 (setq bookmark-save-flag 1) ; save bookmarks immediately
 (setq bookmark-default-file (concat emacs-scratch "bookmarks.bmk"))
 (setq scroll-conservatively 10000) ; scroll one line at a time
+(setq tab-width 4)
+(setq indent-tabs-mode nil)
 
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
         "Prevent annoying \"Active processes exist\" query when you quit Emacs."
@@ -124,13 +126,30 @@
 (global-set-key (kbd "C-c y") 'clipboard-yank)
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-b") 'switch-to-buffer)
+;(global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-c 9") 'comment-region)
 (global-set-key (kbd "C-c 0") 'uncomment-region)
-;(define-key kirkland-minor-mode-map (kbd "C-n") 'bs-show) ; still need something good for this
 (global-set-key (kbd "C-n") 'next-buffer)
 (global-set-key (kbd "C-p") 'previous-buffer)
 (global-set-key (kbd "M-g") 'keyboard-quit)
+(global-set-key (kbd "C-r") 'toggle-read-only)
+
+;; changes C-b to awesome, probably does other stuff too
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t)
+(require 'swbuff-x)
+
+;; cycle-buffer
+(autoload 'cycle-buffer "cycle-buffer" "Cycle forward." t)
+(autoload 'cycle-buffer-backward "cycle-buffer" "Cycle backward." t)
+(autoload 'cycle-buffer-permissive "cycle-buffer" "Cycle forward allowing *buffers*." t)
+(autoload 'cycle-buffer-backward-permissive "cycle-buffer" "Cycle backward allowing *buffers*." t)
+(autoload 'cycle-buffer-toggle-interesting "cycle-buffer" "Toggle if this buffer will be considered." t)
+(global-set-key [(f9)]        'cycle-buffer-backward)
+(global-set-key [(f10)]       'cycle-buffer)
+(global-set-key [(shift f9)]  'cycle-buffer-backward-permissive)
+(global-set-key [(shift f10)] 'cycle-buffer-permissive)
 
 ;; shell customizations
 (add-hook 'shell-mode-hook (lambda ()
