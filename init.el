@@ -138,7 +138,7 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
-(require 'swbuff-x)
+(global-set-key (kbd "C-b") 'ido-switch-buffer)
 
 ;; cycle-buffer
 (autoload 'cycle-buffer "cycle-buffer" "Cycle forward." t)
@@ -158,3 +158,13 @@
   (define-key shell-mode-map (kbd "C-n") 'comint-next-input)))
 
 (shell)
+
+;; start server. then, use emacs-newwindow to connect to it
+(if (and (or
+          (eq 'windows-nt system-type)
+          (featurep 'xemacs))
+         (locate-library "gnuserv")
+         (locate-file "gnuserv" exec-path '(".exe" "")))
+    (progn (require 'gnuserv)
+           (gnuserv-start))
+  (when (not (eq 'windows-nt system-type)) (server-start)))
