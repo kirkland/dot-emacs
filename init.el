@@ -8,7 +8,7 @@
 	 emacs-root
 	 (concat emacs-root "color-theme-6.6.0")
 	 (concat emacs-root "yasnippet-0.6.1c")
-	 (concat emacs-root "emacs-rails-reloaded") 
+	 (concat emacs-root "rails-reloaded") 
 	 (concat emacs-root "ruby-mode")
 	 ))
 
