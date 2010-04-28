@@ -134,6 +134,11 @@
 (global-set-key (kbd "M-g") 'keyboard-quit)
 (global-set-key (kbd "C-r") 'toggle-read-only)
 
+;; ido customization
+;; doesn't work, because M-k binding in kirkland mode has precedence
+(add-hook 'ido-setup-hook (lambda ()
+			    (define-key ido-file-completion-map (kbd "M-k") 'ido-next-match)))
+
 ;; changes C-b to awesome, probably does other stuff too
 (require 'ido)
 (ido-mode t)
