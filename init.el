@@ -129,8 +129,6 @@
 ;(global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-c 9") 'comment-region)
 (global-set-key (kbd "C-c 0") 'uncomment-region)
-(global-set-key (kbd "C-n") 'next-buffer)
-(global-set-key (kbd "C-p") 'previous-buffer)
 (global-set-key (kbd "M-g") 'keyboard-quit)
 (global-set-key (kbd "C-r") 'toggle-read-only)
 
