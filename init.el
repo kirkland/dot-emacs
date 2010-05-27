@@ -125,7 +125,6 @@
 (global-set-key (kbd "C-c y") 'clipboard-yank)
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
-;(global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-c 9") 'comment-region)
 (global-set-key (kbd "C-c 0") 'uncomment-region)
 (global-set-key (kbd "C-n") 'next-buffer)
