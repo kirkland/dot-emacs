@@ -12,10 +12,7 @@
 	 (concat emacs-root "ruby-mode")
 	 ))
 
-;; platform dependent
-(if (eql system-type 'gnu/linux)
-    (load-file (concat emacs-root "init-linux.el"))
-  (load-file (concat emacs-root "init-windows.el")))
+(if (eql system-type 'windows-nt) (load-file (concat emacs-root "windows-init.el")))
 
 (defconst emacs-scratch (concat (getenv "HOME") "/.scratch-emacs/"))
 (make-directory emacs-scratch t)
@@ -26,7 +23,8 @@
 ;; misc options
 (and (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (and (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
-(menu-bar-mode -1)
+(unless (eql system-type 'darwin)
+    (menu-bar-mode -1))
 (setq inhibit-startup-message t)
 (setq enable-recursive-minibuffers t)
 (setq column-number-mode t)
@@ -43,6 +41,7 @@
 (setq scroll-conservatively 10000) ; scroll one line at a time
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
+(set-face-attribute 'default nil :font "Courier New")
 
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
         "Prevent annoying \"Active processes exist\" query when you quit Emacs."
@@ -113,7 +112,7 @@
 (global-set-key (kbd "C--") 'zoom-out)
 
 (require 'bookmark+)
-(require 'rails-autoload)
+;(require 'rails-autoload)
 
 ;; new global keys
 (load-file "~/.emacs.d/kirkland-mode.el")
@@ -126,7 +125,6 @@
 (global-set-key (kbd "C-c y") 'clipboard-yank)
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
-;(global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-c 9") 'comment-region)
 (global-set-key (kbd "C-c 0") 'uncomment-region)
 (global-set-key (kbd "M-g") 'keyboard-quit)
@@ -154,11 +152,21 @@
 (global-set-key [(shift f9)]  'cycle-buffer-backward-permissive)
 (global-set-key [(shift f10)] 'cycle-buffer-permissive)
 
+;; javascript
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; prawn syntax hilighting
+(add-to-list 'auto-mode-alist '("\\.prawn_dsl$" . ruby-mode))
+
 ;; shell customizations
 (add-hook 'shell-mode-hook (lambda ()
   (define-key shell-mode-map (kbd "M-.") 'comint-insert-previous-argument)
   (define-key shell-mode-map (kbd "C-p") 'comint-previous-input)
   (define-key shell-mode-map (kbd "C-n") 'comint-next-input)))
+
+(if (eql system-type 'darwin)
+    (setenv "PATH" "/opt/local/bin:/opt/local/sbin:/Users/rkaufman/.gem/ruby/1.9.1/bin:/Users/rkaufman/.ruby_versions/ruby-1.9.1-p243/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/Users/rkaufman/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/Users/rkaufman/bin"))
 
 (shell)
 
@@ -171,3 +179,4 @@
     (progn (require 'gnuserv)
            (gnuserv-start))
   (when (not (eq 'windows-nt system-type)) (server-start)))
+
