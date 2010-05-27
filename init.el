@@ -12,10 +12,7 @@
 	 (concat emacs-root "ruby-mode")
 	 ))
 
-;; platform dependent
-(if (or (eql system-type 'gnu/linux) (eql system-type 'darwin))
-    (load-file (concat emacs-root "init-linux.el"))
-  (load-file (concat emacs-root "init-windows.el")))
+(if (eql system-type 'windows-nt) (load-file (concat emacs-root "windows-init.el")))
 
 (defconst emacs-scratch (concat (getenv "HOME") "/.scratch-emacs/"))
 (make-directory emacs-scratch t)
@@ -26,7 +23,8 @@
 ;; misc options
 (and (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (and (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
-(menu-bar-mode -1)
+(unless (eql system-type 'darwin)
+    (menu-bar-mode -1))
 (setq inhibit-startup-message t)
 (setq enable-recursive-minibuffers t)
 (setq column-number-mode t)
@@ -43,6 +41,7 @@
 (setq scroll-conservatively 10000) ; scroll one line at a time
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
+(set-face-attribute 'default nil :font "Courier New")
 
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
         "Prevent annoying \"Active processes exist\" query when you quit Emacs."
