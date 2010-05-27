@@ -13,7 +13,7 @@
 	 ))
 
 ;; platform dependent
-(if (eql system-type 'gnu/linux)
+(if (or (eql system-type 'gnu/linux) (eql system-type 'darwin))
     (load-file (concat emacs-root "init-linux.el"))
   (load-file (concat emacs-root "init-windows.el")))
 
@@ -113,7 +113,7 @@
 (global-set-key (kbd "C--") 'zoom-out)
 
 (require 'bookmark+)
-(require 'rails-autoload)
+;(require 'rails-autoload)
 
 ;; new global keys
 (load-file "~/.emacs.d/kirkland-mode.el")
@@ -156,11 +156,21 @@
 (global-set-key [(shift f9)]  'cycle-buffer-backward-permissive)
 (global-set-key [(shift f10)] 'cycle-buffer-permissive)
 
+;; javascript
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; prawn syntax hilighting
+(add-to-list 'auto-mode-alist '("\\.prawn_dsl$" . ruby-mode))
+
 ;; shell customizations
 (add-hook 'shell-mode-hook (lambda ()
   (define-key shell-mode-map (kbd "M-.") 'comint-insert-previous-argument)
   (define-key shell-mode-map (kbd "C-p") 'comint-previous-input)
   (define-key shell-mode-map (kbd "C-n") 'comint-next-input)))
+
+(if (eql system-type 'darwin)
+    (setenv "PATH" "/opt/local/bin:/opt/local/sbin:/Users/rkaufman/.gem/ruby/1.9.1/bin:/Users/rkaufman/.ruby_versions/ruby-1.9.1-p243/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/Users/rkaufman/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/Users/rkaufman/bin"))
 
 (shell)
 
@@ -173,3 +183,4 @@
     (progn (require 'gnuserv)
            (gnuserv-start))
   (when (not (eq 'windows-nt system-type)) (server-start)))
+
