@@ -120,7 +120,8 @@
 ;; ido customization
 ;; doesn't work, because M-k binding in kirkland mode has precedence
 (add-hook 'ido-setup-hook (lambda ()
-			    (define-key ido-file-completion-map (kbd "M-k") 'ido-next-match)))
+			    (define-key ido-file-completion-map (kbd "M-k") 'ido-next-match)
+			    (define-key ido-file-completion-map (kbd "M-l") 'ido-prev-match)))
 
 ;; makes buffer switching/file opening awesome
 (require 'ido)
