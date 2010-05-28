@@ -168,6 +168,9 @@
 (if (eql system-type 'darwin)
     (setenv "PATH" "/opt/local/bin:/opt/local/sbin:/Users/rkaufman/.gem/ruby/1.9.1/bin:/Users/rkaufman/.ruby_versions/ruby-1.9.1-p243/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/Users/rkaufman/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/Users/rkaufman/bin"))
 
+;; haml
+(require 'haml-mode)
+
 (shell)
 
 ;; start server. then, use emacs-newwindow to connect to it
