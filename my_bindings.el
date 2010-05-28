@@ -17,7 +17,7 @@
 (global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
 (global-set-key (kbd "C-e") 'eval-last-sexp)
 (global-set-key (kbd "<f9>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
-(global-set-key (kbd "C-z") 'shell)
+(global-set-key (kbd "C-z") '(lambda () (interactive) (ansi-term "bash")))
 (global-set-key (kbd "C-c y") 'clipboard-yank)
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
