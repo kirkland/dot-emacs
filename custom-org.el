@@ -1,6 +1,6 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-(setq org-tag-alist '(("comp" . ?c) ("home" . ?h) ("wait" . ?w) ("errand" . ?e) ("call" . ?a) ("today" . ?t) ("tomorrow" . ?r) ("work" . ?k) ("low" . ?l)))
+(setq org-tag-alist '(("comp" . ?c) ("home" . ?h) ("wait" . ?w) ("errand" . ?e) ("call" . ?a) ("today" . ?t) ("tomorrow" . ?r) ("low" . ?l)))
 
 (add-hook 'org-mode-hook
 	  '(lambda () (local-set-key "\C-c\r" 'org-insert-todo-heading)
