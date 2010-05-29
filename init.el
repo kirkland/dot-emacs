@@ -114,28 +114,16 @@
 (require 'bookmark+)
 ;(require 'rails-autoload)
 
-;; new global keys
-(load-file "~/.emacs.d/kirkland-mode.el")
-
-;; misc global bindings
-(global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
-(global-set-key (kbd "C-e") 'eval-last-sexp)
-(global-set-key (kbd "<f9>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
-(global-set-key (kbd "C-z") 'shell)
-(global-set-key (kbd "C-c y") 'clipboard-yank)
-(global-set-key (kbd "C-o") 'find-file)
-(global-set-key (kbd "C-s") 'save-buffer)
-(global-set-key (kbd "C-c 9") 'comment-region)
-(global-set-key (kbd "C-c 0") 'uncomment-region)
-(global-set-key (kbd "M-g") 'keyboard-quit)
-(global-set-key (kbd "C-r") 'toggle-read-only)
+;; my custom keybindings
+(load-file "~/.emacs.d/my_bindings.el")
 
 ;; ido customization
 ;; doesn't work, because M-k binding in kirkland mode has precedence
 (add-hook 'ido-setup-hook (lambda ()
-			    (define-key ido-file-completion-map (kbd "M-k") 'ido-next-match)))
+			    (define-key ido-file-completion-map (kbd "M-k") 'ido-next-match)
+			    (define-key ido-file-completion-map (kbd "M-l") 'ido-prev-match)))
 
-;; changes C-b to awesome, probably does other stuff too
+;; makes buffer switching/file opening awesome
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
@@ -167,6 +155,9 @@
 
 (if (eql system-type 'darwin)
     (setenv "PATH" "/opt/local/bin:/opt/local/sbin:/Users/rkaufman/.gem/ruby/1.9.1/bin:/Users/rkaufman/.ruby_versions/ruby-1.9.1-p243/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/Users/rkaufman/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/Users/rkaufman/bin"))
+
+;; haml
+(require 'haml-mode)
 
 (shell)
 

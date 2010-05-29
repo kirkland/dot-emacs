@@ -1,6 +1,6 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-(setq org-tag-alist '(("comp" . ?c) ("home" . ?h) ("wait" . ?w) ("errand" . ?e) ("call" . ?a) ("today" . ?t) ("tomorrow" . ?r) ("low" . ?l)))
+(unless (eql system-type 'darwin) (setq org-tag-alist '(("comp" . ?c) ("home" . ?h) ("wait" . ?w) ("errand" . ?e) ("call" . ?a) ("today" . ?t) ("tomorrow" . ?r) ("low" . ?l))))
 
 (add-hook 'org-mode-hook
 	  '(lambda () (local-set-key "\C-c\r" 'org-insert-todo-heading)
@@ -22,3 +22,5 @@
 ;; doesn't show just DONE items
 (setq org-agenda-custom-commands
       '(("f" tags-tree "comp")))
+
+;(setq (org-agenda-files (quote ("~/life/fun.org" "~/life/work.org" "~/life/personal.org" "~/life/emacs.org" "~/life/investing.org" "~/life/thai.org" "~/life/ruby.org"))))
