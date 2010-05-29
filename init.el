@@ -159,7 +159,7 @@
 ;; haml
 (require 'haml-mode)
 
-(shell)
+(ansi-term "bash")
 
 ;; start server. then, use emacs-newwindow to connect to it
 (if (and (or
