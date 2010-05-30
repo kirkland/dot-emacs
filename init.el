@@ -58,7 +58,7 @@
 (setq scroll-conservatively 10000) ; scroll one line at a time
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
-(set-face-attribute 'default nil :font "Courier New")
+(if (eql system-type 'darwin) (set-face-attribute 'default nil :font "Courier New"))
 
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
         "Prevent annoying \"Active processes exist\" query when you quit Emacs."
