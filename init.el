@@ -28,6 +28,9 @@
 (require 'color-theme)
 (color-theme-initialize)
 
+(global-set-key (kbd "C-c t 1") (lambda () (interactive) (color-theme-arjen)))
+(global-set-key (kbd "C-c t 2") (lambda () (interactive) (color-theme-blue-mood)))
+
 (defconst emacs-scratch (concat (getenv "HOME") "/.scratch-emacs/"))
 (make-directory emacs-scratch t)
 
