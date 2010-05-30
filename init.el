@@ -28,19 +28,6 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-;; doesn't work quite right...
-(add-hook 'after-make-frame-hook
-         (lambda (x)
-           (if (or (eql nil (getenv "SSH_CLIENT"))
-                   (eql emacs-major-version 21)
-                   (eql emacs-major-version 22))
-               (color-theme-arjen)
-             (if (eq system-type 'gnu/linux)
-                 (color-theme-blue-mood)))))
-           
-(global-set-key (kbd "C-c t 1") (lambda () (interactive) (color-theme-arjen)))
-(global-set-key (kbd "C-c t 2") (lambda () (interactive) (color-theme-blue-mood)))
- 
 (defconst emacs-scratch (concat (getenv "HOME") "/.scratch-emacs/"))
 (make-directory emacs-scratch t)
 
