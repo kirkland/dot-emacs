@@ -76,3 +76,9 @@
 (global-set-key (kbd "M-/") 'undo)
 (global-set-key (kbd "M-h") 'dabbrev-expand)
 (global-set-key (kbd "M-a") 'execute-extended-command)
+
+;; org-mode unbindings
+(add-hook 'org-mode-hook (lambda ()
+			   (define-key org-mode-map (kbd "M-a") nil)
+			   (define-key org-mode-map (kbd "M-e") nil)
+			   (define-key org-mode-map (kbd "C-k") nil)))
