@@ -176,6 +176,9 @@
 ;; haml
 (require 'haml-mode)
 
+;; sass syntax hilighting
+(add-to-list 'auto-mode-alist '("\\.sass$" . haml-mode))
+
 ;(ansi-term "bash")
 (shell)
 
