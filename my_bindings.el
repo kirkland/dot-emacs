@@ -83,3 +83,8 @@
 			   (define-key org-mode-map (kbd "M-a") nil)
 			   (define-key org-mode-map (kbd "M-e") nil)
 			   (define-key org-mode-map (kbd "C-k") nil)))
+
+;; shell mode unbindings
+(add-hook 'shell-mode-hook (lambda ()
+			(define-key shell-mode-map (kbd "M-p") nil)
+			(define-key shell-mode-map (kbd "M-n") nil)))
