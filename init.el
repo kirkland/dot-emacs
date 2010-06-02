@@ -131,6 +131,9 @@
 (require 'bookmark+)
 ;(require 'rails-autoload)
 
+;; misc functions
+(load-file "~/.emacs.d/my_functions.el")
+
 ;; my custom keybindings
 (load-file "~/.emacs.d/my_bindings.el")
 
