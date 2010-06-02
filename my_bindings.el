@@ -76,6 +76,7 @@
 (global-set-key (kbd "M-/") 'undo)
 (global-set-key (kbd "M-h") 'dabbrev-expand)
 (global-set-key (kbd "M-a") 'execute-extended-command)
+(global-set-key (kbd "M-9") 'copy-current-line-as-comment)
 
 ;; org-mode unbindings
 (add-hook 'org-mode-hook (lambda ()
