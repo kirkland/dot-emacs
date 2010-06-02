@@ -1,8 +1,4 @@
 ;; these bindings are redundant, or I want to force myself to not use them
-(global-unset-key (kbd "M-d"))
-(global-unset-key (kbd "M-e"))
-(global-unset-key (kbd "M-f"))
-(global-unset-key (kbd "M-w"))
 (global-unset-key (kbd "M-."))
 (global-unset-key (kbd "M-,"))
 (global-unset-key (kbd "C-w"))
@@ -11,7 +7,6 @@
 (global-unset-key (kbd "M-6"))
 (global-unset-key (kbd "M-7"))
 (global-unset-key (kbd "M-8"))
-(global-unset-key (kbd "M-9"))
 
 ;; misc global bindings
 (global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
@@ -33,12 +28,16 @@
 (global-set-key (kbd "M-k") 'next-line)
 (global-set-key (kbd "M-l") 'previous-line)
 (global-set-key (kbd "M-d") 'delete-backward-char)
+(global-set-key (kbd "M-J") 'delete-backward-char)
 (global-set-key (kbd "M-f") 'delete-char)
+(global-set-key (kbd "M-:") 'delete-char)
 
 (global-set-key (kbd "M-u") 'backward-word)
 (global-set-key (kbd "M-i") 'forward-word)
 (global-set-key (kbd "M-e") 'backward-kill-word)
+(global-set-key (kbd "M-U") 'backward-kill-word)
 (global-set-key (kbd "M-r") 'kill-word)
+(global-set-key (kbd "M-I") 'kill-word)
 
 (global-set-key (kbd "M-o") 'move-beginning-of-line)
 (global-set-key (kbd "M-p") 'move-end-of-line)
