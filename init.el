@@ -10,6 +10,7 @@
 	 (concat emacs-root "yasnippet-0.6.1c")
 	 (concat emacs-root "rails-reloaded") 
 	 (concat emacs-root "ruby-mode")
+	 (concat emacs-root "rinari")
 	 ))
 
 (if (eql system-type 'windows-nt) (load-file (concat emacs-root "windows-init.el")))
@@ -129,7 +130,10 @@
 (global-set-key (kbd "C--") 'zoom-out)
 
 (require 'bookmark+)
+
+;; rails minor modes
 ;(require 'rails-autoload)
+(require 'rinari)
 
 ;; misc functions
 (load-file "~/.emacs.d/my_functions.el")
@@ -164,8 +168,9 @@
 (autoload 'js2-mode "js2" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
-;; prawn syntax hilighting
+;; prawn, rake syntax hilighting
 (add-to-list 'auto-mode-alist '("\\.prawn_dsl$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 
 ;; shell customizations
 (add-hook 'shell-mode-hook (lambda ()
@@ -181,6 +186,9 @@
 
 ;; sass syntax hilighting
 (add-to-list 'auto-mode-alist '("\\.sass$" . haml-mode))
+
+;; use C-c <left> and C-c <right> to cycle through recent window layouts
+(winner-mode 1)
 
 ;(ansi-term "bash")
 (shell)

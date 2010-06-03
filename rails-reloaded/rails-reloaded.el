@@ -163,7 +163,7 @@
   :group 'rails
   :type 'string)
 
-(defcustom rails-minor-mode-prefix2-key "\C-c"
+(defcustom rails-minor-mode-prefix2-key "\C-d"
   "Additional key prefix for Rails minor mode."
   :group 'rails
   :type 'string)
