@@ -86,4 +86,5 @@
 ;; shell mode unbindings
 (add-hook 'shell-mode-hook (lambda ()
 			(define-key shell-mode-map (kbd "M-p") nil)
+			(define-key shell-mode-map (kbd "M-s") nil)
 			(define-key shell-mode-map (kbd "M-n") nil)))
