@@ -133,7 +133,7 @@
 
 ;; rails minor modes
 ;(require 'rails-autoload)
-(require 'rinari)
+;(require 'rinari)
 
 ;; misc functions
 (load-file "~/.emacs.d/my_functions.el")
