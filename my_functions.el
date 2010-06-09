@@ -1,9 +1,8 @@
 ;; misc
-(defun copy-current-line-as-comment ()
+(defun copy-current-line ()
   (interactive)
   (beginning-of-line)
   (kill-line)
-  (insert ";")
   (yank)
   (newline)
   (yank))

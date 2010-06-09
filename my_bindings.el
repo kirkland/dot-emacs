@@ -19,8 +19,6 @@
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-c 9") 'comment-region)
 (global-set-key (kbd "C-c 0") 'uncomment-region)
-(global-set-key (kbd "M-g") 'keyboard-quit)
-(global-set-key (kbd "C-r") 'toggle-read-only)
 
 ;; basic movement and editing 
 (global-set-key (kbd "M-j") 'backward-char)
@@ -75,7 +73,8 @@
 (global-set-key (kbd "M-/") 'undo)
 (global-set-key (kbd "M-h") 'dabbrev-expand)
 (global-set-key (kbd "M-a") 'execute-extended-command)
-(global-set-key (kbd "M-9") 'copy-current-line-as-comment)
+(global-set-key (kbd "M-9") 'copy-current-line)
+(global-set-key (kbd "C-<f5>") 'revert-buffer)
 
 ;; org-mode unbindings
 (add-hook 'org-mode-hook (lambda ()
@@ -88,3 +87,7 @@
 			(define-key shell-mode-map (kbd "M-p") nil)
 			(define-key shell-mode-map (kbd "M-s") nil)
 			(define-key shell-mode-map (kbd "M-n") nil)))
+
+;; dired mode unbindings
+(add-hook 'dired-mode-hook (lambda ()
+			     (define-key dired-mode-map (kbd "M-s") nil)))
