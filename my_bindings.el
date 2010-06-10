@@ -39,7 +39,7 @@
 
 (global-set-key (kbd "M-o") 'move-beginning-of-line)
 (global-set-key (kbd "M-p") 'move-end-of-line)
-(global-set-key (kbd "M-t") 'kill-line)
+(global-set-key (kbd "C-t") 'kill-line)
 
 ;(global-set-key (kbd "C-f") 'scroll-down)
 ;(global-set-key (kbd "C-v") 'scroll-up)
