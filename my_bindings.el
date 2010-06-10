@@ -1,7 +1,7 @@
 ;; these bindings are redundant, or I want to force myself to not use them
 (global-unset-key (kbd "M-."))
 (global-unset-key (kbd "M-,"))
-(global-unset-key (kbd "C-w"))
+;(global-unset-key (kbd "C-w"))
 (global-unset-key (kbd "M-4"))
 (global-unset-key (kbd "M-5"))
 (global-unset-key (kbd "M-6"))
@@ -41,8 +41,8 @@
 (global-set-key (kbd "M-p") 'move-end-of-line)
 (global-set-key (kbd "M-t") 'kill-line)
 
-(global-set-key (kbd "C-f") 'scroll-down)
-(global-set-key (kbd "C-v") 'scroll-up)
+;(global-set-key (kbd "C-f") 'scroll-down)
+;(global-set-key (kbd "C-v") 'scroll-up)
 
 (global-set-key (kbd "M-m") 'forward-sexp)
 (global-set-key (kbd "M-n") 'backward-sexp)
@@ -64,10 +64,11 @@
 (global-set-key (kbd "C-k") 'kill-buffer)
 
 ;; search
-(global-set-key (kbd "M-w") 'isearch-forward)
-(global-set-key (kbd "M-q") 'isearch-backward)
-(define-key isearch-mode-map (kbd "M-w") 'isearch-repeat-forward)
-(define-key isearch-mode-map (kbd "M-q") 'isearch-repeat-backward)
+;(global-set-key (kbd "M-w") 'isearch-forward)
+;(global-set-key (kbd "M-q") 'isearch-backward)
+(global-set-key (kbd "C-f") 'isearch-forward)
+(define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
+;(define-key isearch-mode-map (kbd "M-q") 'isearch-repeat-backward)
 
 ;; misc
 (global-set-key (kbd "M-/") 'undo)
