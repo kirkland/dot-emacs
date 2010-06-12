@@ -1,18 +1,19 @@
 ;; these bindings are redundant, or I want to force myself to not use them
 (global-unset-key (kbd "M-."))
 (global-unset-key (kbd "M-,"))
-;(global-unset-key (kbd "C-w"))
 (global-unset-key (kbd "M-4"))
 (global-unset-key (kbd "M-5"))
 (global-unset-key (kbd "M-6"))
 (global-unset-key (kbd "M-7"))
 (global-unset-key (kbd "M-8"))
+(global-unset-key (kbd "M-q"))
+(global-unset-key (kbd "M-'"))
+(global-unset-key (kbd "M-m"))
+(global-unset-key (kbd "M-n"))
 
 ;; misc global bindings
 (global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
-(global-set-key (kbd "C-e") 'eval-last-sexp)
-(global-set-key (kbd "<f9>") (lambda () (interactive) (load-file "~/.emacs.d/init.el")))
-;(global-set-key (kbd "C-z") '(lambda () (interactive) (ansi-term "bash")))
+(global-set-key (kbd "C-c e") 'eval-last-sexp)
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-c y") 'clipboard-yank)
 (global-set-key (kbd "C-o") 'find-file)
@@ -39,13 +40,10 @@
 
 (global-set-key (kbd "M-o") 'move-beginning-of-line)
 (global-set-key (kbd "M-p") 'move-end-of-line)
-(global-set-key (kbd "C-t") 'kill-line)
+(global-set-key (kbd "M-t") 'kill-line)
 
-;(global-set-key (kbd "C-f") 'scroll-down)
-;(global-set-key (kbd "C-v") 'scroll-up)
-
-(global-set-key (kbd "M-m") 'forward-sexp)
-(global-set-key (kbd "M-n") 'backward-sexp)
+; (global-set-key (kbd "M-m") 'forward-sexp)
+; (global-set-key (kbd "M-n") 'backward-sexp)
 
 ;; killing, yanking
 (global-set-key (kbd "M-v") 'yank)
@@ -59,16 +57,19 @@
 (global-set-key (kbd "M-s") (lambda () (interactive) (other-window 1)))
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "C-c 1") 'delete-other-windows)
 (global-set-key (kbd "M-2") 'split-window-vertically)
-(global-set-key (kbd "M-3") 'split-window-horizontally)
+(global-set-key (kbd "C-c v") 'split-window-vertically)
+(global-set-key (kbd "C-c h") 'split-window-horizontally)
 (global-set-key (kbd "C-k") 'kill-buffer)
+(global-set-key (kbd "<XF86Back>") 'cycle-buffer-backward)
+(global-set-key (kbd "<XF86Forward>") 'cycle-buffer)
+(global-set-key (kbd "M-7") (lambda () (interactive) (other-window -1)))
+(global-set-key (kbd "M-8") 'other-window)
 
 ;; search
-;(global-set-key (kbd "M-w") 'isearch-forward)
-;(global-set-key (kbd "M-q") 'isearch-backward)
 (global-set-key (kbd "C-f") 'isearch-forward)
 (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
-;(define-key isearch-mode-map (kbd "M-q") 'isearch-repeat-backward)
 
 ;; misc
 (global-set-key (kbd "M-/") 'undo)
