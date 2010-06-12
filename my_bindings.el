@@ -42,9 +42,6 @@
 (global-set-key (kbd "M-p") 'move-end-of-line)
 (global-set-key (kbd "M-t") 'kill-line)
 
-; (global-set-key (kbd "M-m") 'forward-sexp)
-; (global-set-key (kbd "M-n") 'backward-sexp)
-
 ;; killing, yanking
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "M-b") 'yank-pop)
@@ -64,6 +61,8 @@
 (global-set-key (kbd "C-k") 'kill-buffer)
 (global-set-key (kbd "<XF86Back>") 'cycle-buffer-backward)
 (global-set-key (kbd "<XF86Forward>") 'cycle-buffer)
+(global-set-key (kbd "M-&") 'cycle-buffer-backward)
+(global-set-key (kbd "M-*") 'cycle-buffer)
 (global-set-key (kbd "M-7") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "M-8") 'other-window)
 
