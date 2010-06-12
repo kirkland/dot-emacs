@@ -192,6 +192,20 @@
 ;; use C-c <left> and C-c <right> to cycle through recent window layouts
 (winner-mode 1)
 
+;;; This was installed by package-install.el.
+;;; This provides support for the package system and
+;;; interfacing with ELPA, the package archive.
+;;; Move this code earlier if you want to reference
+;;; packages in your .emacs.
+;;; run package-list-packages
+(when
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
+
+; maybe this will be annoying
+(global-hl-line-mode)
+
 ;(ansi-term "bash")
 (shell)
 
@@ -204,16 +218,3 @@
     (progn (require 'gnuserv)
            (gnuserv-start))
   (when (not (eq 'windows-nt system-type)) (server-start)))
-
-
-
-;;; This was installed by package-install.el.
-;;; This provides support for the package system and
-;;; interfacing with ELPA, the package archive.
-;;; Move this code earlier if you want to reference
-;;; packages in your .emacs.
-;;; run package-list-packages
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
