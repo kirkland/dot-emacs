@@ -42,6 +42,9 @@
 (global-set-key (kbd "M-p") 'move-end-of-line)
 (global-set-key (kbd "M-t") 'kill-line)
 
+(global-set-key (kbd "M-n") 'beginning-of-buffer)
+(global-set-key (kbd "M-m") 'end-of-buffer)
+
 ;; killing, yanking
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "M-b") 'yank-pop)
@@ -56,6 +59,7 @@
 (global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "C-c 1") 'delete-other-windows)
 (global-set-key (kbd "M-2") 'split-window-vertically)
+(global-set-key (kbd "M-3") 'split-window-horizontally)
 (global-set-key (kbd "C-c v") 'split-window-vertically)
 (global-set-key (kbd "C-c h") 'split-window-horizontally)
 (global-set-key (kbd "C-k") 'kill-buffer)
