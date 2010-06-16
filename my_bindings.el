@@ -52,6 +52,7 @@
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 (global-set-key (kbd "M-RET") 'newline)
 (global-set-key (kbd "M-x") 'kill-region)
+(global-set-key (kbd "M-4") 'expand-region-linewise)
 
 ;; windows and buffers
 (global-set-key (kbd "M-s") (lambda () (interactive) (other-window 1)))

@@ -6,3 +6,13 @@
   (yank)
   (newline)
   (yank))
+
+(defun expand-region-linewise ()
+  (interactive)
+  (let ((start (region-beginning))
+        (end (region-end)))
+   (goto-char start)
+   (beginning-of-line)
+   (set-mark (point))
+   (goto-char end)
+   (unless (bolp) (end-of-line))))
