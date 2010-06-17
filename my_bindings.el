@@ -13,7 +13,7 @@
 
 ;; misc global bindings
 (global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
-(global-set-key (kbd "C-c e") 'eval-last-sexp)
+(global-set-key (kbd "C-e") 'eval-last-sexp)
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-c y") 'clipboard-yank)
 (global-set-key (kbd "C-o") 'find-file)
@@ -74,6 +74,8 @@
 ;; search
 (global-set-key (kbd "C-f") 'isearch-forward)
 (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
+(global-set-key (kbd "C-S-f") 'isearch-backward)
+(define-key isearch-mode-map (kbd "C-S-f") 'isearch-repeat-backward)
 
 ;; misc
 (global-set-key (kbd "M-/") 'undo)
