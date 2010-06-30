@@ -203,9 +203,6 @@
      (expand-file-name "~/.emacs.d/elpa/package.el"))
   (package-initialize))
 
-; maybe this will be annoying
-(global-hl-line-mode)
-
 ; simulate vi's '.' command
 (require 'dot-mode)
 (add-hook 'find-file-hooks 'dot-mode-on)
