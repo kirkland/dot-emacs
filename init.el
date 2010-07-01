@@ -11,6 +11,7 @@
 	 (concat emacs-root "rails-reloaded") 
 	 (concat emacs-root "ruby-mode")
 	 (concat emacs-root "rinari")
+	 (concat emacs-root "jd-el")
 	 ))
 
 (if (eql system-type 'windows-nt) (load-file (concat emacs-root "windows-init.el")))
@@ -206,6 +207,8 @@
 ; simulate vi's '.' command
 (require 'dot-mode)
 (add-hook 'find-file-hooks 'dot-mode-on)
+
+(require 'google-maps)
 
 ;(ansi-term "bash")
 (shell)

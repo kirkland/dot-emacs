@@ -83,6 +83,7 @@
 (global-set-key (kbd "M-a") 'execute-extended-command)
 (global-set-key (kbd "M-9") 'copy-current-line)
 (global-set-key (kbd "C-<f5>") 'revert-buffer)
+(global-set-key (kbd "s-r") 'revert-buffer)
 
 ;; org-mode unbindings
 (add-hook 'org-mode-hook (lambda ()
