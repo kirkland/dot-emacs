@@ -11,6 +11,7 @@
 	 (concat emacs-root "rails-reloaded") 
 	 (concat emacs-root "ruby-mode")
 	 (concat emacs-root "rinari")
+	 (concat emacs-root "rails-minor-mode")
 	 (concat emacs-root "jd-el")
 	 ))
 
@@ -134,7 +135,8 @@
 
 ;; rails minor modes
 ;(require 'rails-autoload)
-;(require 'rinari)
+(require 'rinari)
+;(require 'rails)
 
 ;; misc functions
 (load-file "~/.emacs.d/my_functions.el")

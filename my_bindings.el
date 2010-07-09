@@ -10,9 +10,12 @@
 (global-unset-key (kbd "M-'"))
 (global-unset-key (kbd "M-m"))
 (global-unset-key (kbd "M-n"))
+(global-unset-key (kbd "s-h"))
 
 ;; misc global bindings
-(global-set-key (kbd "C-x C-b") 'bs-show) ; use buffer-selection-menu mode
+(global-set-key (kbd "C-x C-b") 'bs-show)
+(global-set-key (kbd "C-x C-n") 'bs-show) ; fat fingers
+(global-set-key (kbd "C-x C-v") 'bs-show) ; fatter fingers
 (global-set-key (kbd "C-e") 'eval-last-sexp)
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-c y") 'clipboard-yank)
@@ -84,6 +87,7 @@
 (global-set-key (kbd "M-9") 'copy-current-line)
 (global-set-key (kbd "C-<f5>") 'revert-buffer)
 (global-set-key (kbd "s-r") 'revert-buffer)
+(global-set-key (kbd "s-g") 'keyboard-quit)
 
 ;; org-mode unbindings
 (add-hook 'org-mode-hook (lambda ()
