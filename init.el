@@ -135,7 +135,7 @@
 
 ;; rails minor modes
 ;(require 'rails-autoload)
-(require 'rinari)
+;(require 'rinari)
 ;(require 'rails)
 
 ;; misc functions
@@ -211,6 +211,10 @@
 (add-hook 'find-file-hooks 'dot-mode-on)
 
 (require 'google-maps)
+
+(setq viper-mode t)
+(require 'viper)
+(require 'vimpulse)
 
 ;(ansi-term "bash")
 (shell)
