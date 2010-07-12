@@ -13,6 +13,7 @@
 	 (concat emacs-root "rinari")
 	 (concat emacs-root "rails-minor-mode")
 	 (concat emacs-root "jd-el")
+	 (concat emacs-root "vimpulse")
 	 ))
 
 (if (eql system-type 'windows-nt) (load-file (concat emacs-root "windows-init.el")))
@@ -211,6 +212,11 @@
 (add-hook 'find-file-hooks 'dot-mode-on)
 
 (require 'google-maps)
+
+; vim shit
+(require 'vimpulse)
+(setq viper-mode t)
+(viper-mode)
 
 ;(ansi-term "bash")
 (shell)

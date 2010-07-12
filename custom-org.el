@@ -9,6 +9,7 @@
 		      (local-set-key (kbd "C-c C-j") 'org-shiftmetadown)
 		      (local-set-key (kbd "C-c C-k") 'org-shiftmetaup)
 		      (local-set-key (kbd "C-c C-s") 'org-sparse-tree)
+		      (local-set-key (kbd "C-c C-<RET>") 'org-insert-todo-heading) ; doesn't work, oh well
 		      (add-hook 'org-after-todo-state-change-hook ; default tag
 				'(lambda () (if (string= "TODO" state)
 						(org-toggle-tag "comp" 'on)
