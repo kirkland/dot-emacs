@@ -125,7 +125,7 @@
 
 ;; rails minor modes
 ;(require 'rails-autoload)
-;(require 'rinari)
+(require 'rinari)
 ;(require 'rails)
 
 ;; misc functions
