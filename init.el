@@ -18,23 +18,6 @@
 
 (if (eql system-type 'windows-nt) (load-file (concat emacs-root "windows-init.el")))
 
-;; i think this only works because it appears before loading of custom file
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
- '(font-lock-builtin-face ((((type tty) (class color)) (:foreground "yellow" :weight light))))
- '(link ((((class color) (background light)) (:foreground "cyan" :underline t))))
- '(minibuffer-prompt ((t (:foreground "cyan" :family "default")))))
-;; colors
-(require 'color-theme)
-(color-theme-initialize)
-
-(global-set-key (kbd "C-c t 1") (lambda () (interactive) (color-theme-arjen)))
-(global-set-key (kbd "C-c t 2") (lambda () (interactive) (color-theme-blue-mood)))
-
 (defconst emacs-scratch (concat (getenv "HOME") "/.scratch-emacs/"))
 (make-directory emacs-scratch t)
 
@@ -136,7 +119,7 @@
 
 ;; rails minor modes
 ;(require 'rails-autoload)
-(require 'rinari)
+;(require 'rinari)
 ;(require 'rails)
 
 ;; misc functions
@@ -213,10 +196,9 @@
 
 (require 'google-maps)
 
-; vim shit
-(require 'vimpulse)
 (setq viper-mode t)
-(viper-mode)
+(require 'viper)
+(require 'vimpulse)
 
 ;(ansi-term "bash")
 (shell)
