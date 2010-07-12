@@ -1,5 +1,8 @@
 (require 'cl)
 
+(setq viper-mode t)
+(require 'viper)
+
 ;; paths
 (defconst emacs-root (concat (getenv "HOME") "/.emacs.d/"))
 
@@ -16,10 +19,13 @@
 	 (concat emacs-root "vimpulse")
 	 ))
 
+(require 'vimpulse)
+
 (if (eql system-type 'windows-nt) (load-file (concat emacs-root "windows-init.el")))
 
 (defconst emacs-scratch (concat (getenv "HOME") "/.scratch-emacs/"))
 (make-directory emacs-scratch t)
+
 
 (setq custom-file "~/.emacs.d/auto-custom.el")
 (load custom-file)
@@ -196,9 +202,6 @@
 
 (require 'google-maps)
 
-(setq viper-mode t)
-(require 'viper)
-(require 'vimpulse)
 
 ;(ansi-term "bash")
 (shell)
