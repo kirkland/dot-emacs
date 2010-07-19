@@ -213,10 +213,6 @@
 
 (require 'google-maps)
 
-(setq viper-mode t)
-(require 'viper)
-(require 'vimpulse)
-
 ;(ansi-term "bash")
 (shell)
 
