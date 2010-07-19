@@ -26,15 +26,9 @@
 (defconst emacs-scratch (concat (getenv "HOME") "/.scratch-emacs/"))
 (make-directory emacs-scratch t)
 
+
 (setq custom-file "~/.emacs.d/auto-custom.el")
 (load custom-file)
-
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-arjen)
-
-(global-set-key (kbd "C-c t 1") (lambda () (interactive) (color-theme-arjen)))
-(global-set-key (kbd "C-c t 2") (lambda () (interactive) (color-theme-blue-mood)))
 
 ;; misc options
 (and (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -180,7 +174,7 @@
   (define-key shell-mode-map (kbd "C-n") 'comint-next-input)))
 
 (if (eql system-type 'darwin)
-  (setenv "PATH" "/opt/local/bin:/opt/local/sbin:/Users/rkaufman/.gem/ruby/1.9.1/bin:/Users/rkaufman/.ruby_versions/ruby-1.9.1-p243/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/Users/rkaufman/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/Users/rkaufman/bin"))
+    (setenv "PATH" "/opt/local/bin:/opt/local/sbin:/Users/rkaufman/.gem/ruby/1.9.1/bin:/Users/rkaufman/.ruby_versions/ruby-1.9.1-p243/bin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/postgresql83/bin:/Users/rkaufman/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:/Users/rkaufman/bin"))
 
 ;; haml
 (require 'haml-mode)
