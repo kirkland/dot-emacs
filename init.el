@@ -139,6 +139,9 @@
 (require 'rinari)
 ;(require 'rails)
 
+(require 'undo-tree)
+(global-undo-tree-mode)
+
 ;; misc functions
 (load-file "~/.emacs.d/my_functions.el")
 
