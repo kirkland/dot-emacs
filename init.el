@@ -106,10 +106,10 @@
 		      (local-set-key (kbd "C-c C-j") 'org-shiftmetadown)
 		      (local-set-key (kbd "C-c C-k") 'org-shiftmetaup)
 		      (local-set-key (kbd "C-c C-s") 'org-sparse-tree)
-		      (add-hook 'org-after-todo-state-change-hook ; default tag
-				'(lambda () (if (string= "TODO" state)
-						(org-toggle-tag "comp" 'on)
-					      nil)))
+		      ;; (add-hook 'org-after-todo-state-change-hook ; default tag
+		      ;; 		'(lambda () (if (string= "TODO" state)
+		      ;; 				(org-toggle-tag "comp" 'on)
+		      ;; 			      nil)))
 		      (defun org-insert-todo-heading (arg)
 			(interactive "P")
 			(org-insert-heading)
@@ -136,7 +136,7 @@
 
 ;; rails minor modes
 ;(require 'rails-autoload)
-(require 'rinari)
+;(require 'rinari)
 ;(require 'rails)
 
 ;; misc functions
@@ -225,3 +225,5 @@
     (progn (require 'gnuserv)
            (gnuserv-start))
   (when (not (eq 'windows-nt system-type)) (server-start)))
+
+(put 'downcase-region 'disabled nil)
