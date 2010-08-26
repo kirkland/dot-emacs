@@ -16,7 +16,7 @@
 (global-set-key (kbd "C-x C-b") 'bs-show)
 (global-set-key (kbd "C-x C-n") 'bs-show) ; fat fingers
 (global-set-key (kbd "C-x C-v") 'bs-show) ; fatter fingers
-(global-set-key (kbd "C-e") 'eval-last-sexp)
+;(global-set-key (kbd "C-e") 'eval-last-sexp)
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-c y") 'clipboard-yank)
 (global-set-key (kbd "C-o") 'find-file)
