@@ -72,6 +72,7 @@
 (global-set-key (kbd "M-*") 'cycle-buffer)
 (global-set-key (kbd "M-7") (lambda () (interactive) (other-window -1)))
 (global-set-key (kbd "M-8") 'other-window)
+(global-set-key (kbd "C-u") 'other-window)
 
 ;; search
 (global-set-key (kbd "C-f") 'isearch-forward)
