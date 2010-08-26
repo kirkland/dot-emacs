@@ -58,7 +58,6 @@
 (global-set-key (kbd "M-4") 'expand-region-linewise)
 
 ;; windows and buffers
-(global-set-key (kbd "M-s") (lambda () (interactive) (other-window 1)))
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "C-c 1") 'delete-other-windows)
