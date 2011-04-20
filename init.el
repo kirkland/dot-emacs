@@ -24,8 +24,15 @@
 (setq scroll-conservatively 10000) ; scroll one line at a time
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
-(if (eql system-type 'darwin) (set-face-attribute 'default nil :font "Andale Mono"))
 
+
+;; run extra initialization. for some reason, when starting in daemon mode
+;; on OSX, it can't find the font i want
+(if (eql system-type 'darwin)
+    (global-set-key [f12] (lambda ()
+			    (interactive)
+			    (set-face-attribute 'default nil :font "Andale Mono"))))
+		
 
 ;; misc global bindings
 (global-set-key (kbd "M-a") 'execute-extended-command)
