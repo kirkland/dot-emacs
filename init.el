@@ -38,6 +38,10 @@
 (global-set-key (kbd "M-a") 'execute-extended-command)
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-o") 'find-file)
+(global-set-key (kbd "C-s") 'save-buffer)
+
+;; window/apple key bindings... probably want to avoid these
+(global-set-key (kbd "s-b") 'switch-to-buffer)
 
 ;(ansi-term "bash")
 (shell)
@@ -51,3 +55,23 @@
     (progn (require 'gnuserv)
            (gnuserv-start))
   (when (not (eq 'windows-nt system-type)) (server-start)))
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(save-place t nil (saveplace))
+ '(show-paren-mode t))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+
+(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/")
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-lethe)
