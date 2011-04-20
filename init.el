@@ -30,6 +30,7 @@
 ;; misc global bindings
 (global-set-key (kbd "M-a") 'execute-extended-command)
 (global-set-key (kbd "C-z") 'shell)
+(global-set-key (kbd "C-o") 'find-file)
 
 ;(ansi-term "bash")
 (shell)
