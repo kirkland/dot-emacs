@@ -34,11 +34,25 @@
 			    (set-face-attribute 'default nil :font "Andale Mono"))))
 		
 
-;; misc global bindings
+;;;; global bindings
+
+;; movement
+(global-set-key (kbd "M-;") 'forward-char)
+(global-set-key (kbd "M-j") 'backward-char)
+(global-set-key (kbd "M-k") 'next-line)
+(global-set-key (kbd "M-l") 'previous-line)
+(global-set-key (kbd "M-o") 'move-beginning-of-line)
+(global-set-key (kbd "M-p") 'move-end-of-line)
+
+;; other
 (global-set-key (kbd "M-a") 'execute-extended-command)
 (global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-f") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "M-t") 'kill-line)
+
 
 ;; window/apple key bindings... probably want to avoid these
 (global-set-key (kbd "s-b") 'switch-to-buffer)
