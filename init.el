@@ -43,6 +43,11 @@
 (global-set-key (kbd "M-l") 'previous-line)
 (global-set-key (kbd "M-o") 'move-beginning-of-line)
 (global-set-key (kbd "M-p") 'move-end-of-line)
+(global-set-key (kbd "M-u") 'backward-word)
+(global-set-key (kbd "M-i") 'forward-word)
+(global-set-key (kbd "M-e") 'backward-kill-word)
+(global-set-key (kbd "M-d") 'backward-delete-char)
+(global-set-key (kbd "M-f") 'delete-char)
 
 ;; other
 (global-set-key (kbd "M-a") 'execute-extended-command)
