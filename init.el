@@ -56,7 +56,7 @@
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-f") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-c m") 'longlines-mode)
+(global-set-key (kbd "C-c l") 'longlines-mode)
 
 ;;;; mode bindings
 
