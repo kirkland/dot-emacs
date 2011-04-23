@@ -25,7 +25,6 @@
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
 
-
 ;; run extra initialization. for some reason, when starting in daemon mode
 ;; on OSX, it can't find the font i want
 (if (eql system-type 'darwin)
@@ -49,6 +48,12 @@
 (global-set-key (kbd "M-d") 'backward-delete-char)
 (global-set-key (kbd "M-f") 'delete-char)
 
+;; text manipulation
+(global-set-key (kbd "M-t") 'kill-line)
+
+;; buffers and windows
+(global-set-key (kbd "C-b") 'switch-to-buffer)
+
 ;; other
 (global-set-key (kbd "M-a") 'execute-extended-command)
 (global-set-key (kbd "C-z") 'shell)
@@ -56,10 +61,15 @@
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-f") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "M-t") 'kill-line)
+(global-set-key (kbd "C-c l") 'longlines-mode)
+
+;;;; mode bindings
+
+;; isearch mode
+(define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
 
 
-;; window/apple key bindings... probably want to avoid these
+;;;; window/apple key bindings... probably want to avoid these
 (global-set-key (kbd "s-b") 'switch-to-buffer)
 
 ;(ansi-term "bash")
