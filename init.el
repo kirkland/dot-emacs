@@ -53,6 +53,8 @@
 
 ;; buffers and windows
 (global-set-key (kbd "C-b") 'switch-to-buffer)
+(global-set-key (kbd "C-x b") 'bs-show)
+(global-set-key (kbd "C-x C-b") 'bs-show)
 
 ;; other
 (global-set-key (kbd "M-a") 'execute-extended-command)
