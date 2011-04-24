@@ -45,6 +45,7 @@
 (global-set-key (kbd "M-u") 'backward-word)
 (global-set-key (kbd "M-i") 'forward-word)
 (global-set-key (kbd "M-e") 'backward-kill-word)
+(global-set-key (kbd "M-r") 'forward-kill-word)
 (global-set-key (kbd "M-d") 'backward-delete-char)
 (global-set-key (kbd "M-f") 'delete-char)
 (global-set-key (kbd "M-n") 'beginning-of-buffer)
@@ -66,12 +67,13 @@
 (global-set-key (kbd "C-f") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-c l") 'longlines-mode)
+(global-set-key (kbd "M-q") 'undo)
+(global-set-key (kbd "M-<SPC>") 'set-mark-command)
 
 ;;;; mode bindings
 
 ;; isearch mode
 (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
-
 
 ;;;; window/apple key bindings... probably want to avoid these
 (global-set-key (kbd "s-b") 'switch-to-buffer)
