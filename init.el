@@ -31,7 +31,13 @@
     (global-set-key [f12] (lambda ()
 			    (interactive)
 			    (set-face-attribute 'default nil :font "Andale Mono"))))
-		
+
+;;;; misc functions		
+(defun create-or-switch-to-term ()
+  (interactive)
+  (if (get-buffer "*ansi-term*")
+      (switch-to-buffer (get-buffer "*ansi-term*"))
+      (ansi-term "/bin/bash")))
 
 ;;;; global bindings
 
@@ -58,6 +64,7 @@
 (global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-x b") 'bs-show)
 (global-set-key (kbd "C-x C-b") 'bs-show)
+(global-set-key (kbd "C-c t") 'create-or-switch-to-term)
 
 ;; other
 (global-set-key (kbd "M-a") 'execute-extended-command)
