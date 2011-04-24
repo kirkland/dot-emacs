@@ -47,6 +47,8 @@
 (global-set-key (kbd "M-e") 'backward-kill-word)
 (global-set-key (kbd "M-d") 'backward-delete-char)
 (global-set-key (kbd "M-f") 'delete-char)
+(global-set-key (kbd "M-n") 'beginning-of-buffer)
+(global-set-key (kbd "M-m") 'end-of-buffer)
 
 ;; text manipulation
 (global-set-key (kbd "M-t") 'kill-line)
