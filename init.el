@@ -84,19 +84,6 @@
 ;;;; window/apple key bindings... probably want to avoid these
 (global-set-key (kbd "s-b") 'switch-to-buffer)
 
-;(ansi-term "bash")
-(shell)
-
-;; start server. then, use emacs-newwindow to connect to it
-(if (and (or
-          (eq 'windows-nt system-type)
-          (featurep 'xemacs))
-         (locate-library "gnuserv")
-         (locate-file "gnuserv" exec-path '(".exe" "")))
-    (progn (require 'gnuserv)
-           (gnuserv-start))
-  (when (not (eq 'windows-nt system-type)) (server-start)))
-
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -116,3 +103,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-lethe)
+
+;; start server. then, use emacs-newwindow to connect to it
+(unless server-process
+  (server-start))
