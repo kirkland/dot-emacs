@@ -64,11 +64,10 @@
 (global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-x b") 'bs-show)
 (global-set-key (kbd "C-x C-b") 'bs-show)
-(global-set-key (kbd "C-c t") 'create-or-switch-to-term)
+(global-set-key (kbd "C-z") 'create-or-switch-to-term)
 
 ;; other
 (global-set-key (kbd "M-a") 'execute-extended-command)
-(global-set-key (kbd "C-z") 'shell)
 (global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-f") 'isearch-forward-regexp)
