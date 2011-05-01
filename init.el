@@ -104,6 +104,9 @@
 (color-theme-initialize)
 (color-theme-lethe)
 
+;; built-in js mode is garbage. don't start it.
+(add-to-list 'auto-mode-alist '("\\.js\\'" . fundamental-mode))
+
 ;; start server. then, use emacs-newwindow to connect to it
 (unless server-process
   (server-start))
