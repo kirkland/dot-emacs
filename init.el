@@ -62,9 +62,9 @@
 
 ;; buffers and windows
 (global-set-key (kbd "C-b") 'switch-to-buffer)
-(global-set-key (kbd "C-x b") 'bs-show)
 (global-set-key (kbd "C-x C-b") 'bs-show)
 (global-set-key (kbd "C-z") 'create-or-switch-to-term)
+(global-set-key (kbd "C-k") 'kill-buffer)
 
 ;; other
 (global-set-key (kbd "M-a") 'execute-extended-command)
@@ -103,6 +103,9 @@
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-lethe)
+
+(require 'ido)
+(ido-mode)
 
 ;; start server. then, use emacs-newwindow to connect to it
 (unless server-process
