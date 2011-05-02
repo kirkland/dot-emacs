@@ -47,6 +47,9 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+;; buffer cycling tools
+(require 'cycle-buffer)
+
 ;;;; misc functions		
 (defun create-or-switch-to-term ()
   (interactive)
@@ -89,7 +92,10 @@
 (global-set-key (kbd "C-c t") 'create-or-switch-to-term)
 (global-set-key (kbd "C-c C-t") 'create-or-switch-to-term)
 (global-set-key (kbd "C-k") 'kill-buffer)
-(global-set-key (kbd "C-<return>") 'switch-to-most-recent-hidden-buffer)
+(global-set-key (kbd "C-<SPC>") 'other-window)
+(global-set-key (kbd "C-S-<SPC>") (lambda () (interactive) (other-window -1)))
+(global-set-key (kbd "C-<return>") 'cycle-buffer)
+(global-set-key (kbd "C-S-<return>") 'cycle-buffer-backward)
 
 ;; other
 (global-set-key (kbd "M-a") 'execute-extended-command)
