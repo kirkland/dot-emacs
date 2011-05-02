@@ -54,6 +54,10 @@
       (switch-to-buffer (get-buffer "*ansi-term*"))
       (ansi-term "/bin/bash")))
 
+(defun switch-to-most-recent-hidden-buffer ()
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) t)))
+
 ;;;; global bindings
 
 ;; movement
@@ -83,7 +87,9 @@
 (global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-x C-b") 'bs-show)
 (global-set-key (kbd "C-c t") 'create-or-switch-to-term)
+(global-set-key (kbd "C-c C-t") 'create-or-switch-to-term)
 (global-set-key (kbd "C-k") 'kill-buffer)
+(global-set-key (kbd "C-<return>") 'switch-to-most-recent-hidden-buffer)
 
 ;; other
 (global-set-key (kbd "M-a") 'execute-extended-command)
