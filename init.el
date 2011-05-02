@@ -24,6 +24,7 @@
 (setq scroll-conservatively 10000) ; scroll one line at a time
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
+(add-to-list 'load-path "~/.emacs.d/")
 
 ;; run extra initialization. for some reason, when starting in daemon mode
 ;; on OSX, it can't find the font i want
@@ -31,6 +32,11 @@
     (global-set-key [f12] (lambda ()
 			    (interactive)
 			    (set-face-attribute 'default nil :font "Andale Mono"))))
+
+
+;; better undo. see documentation in undo-tree.el
+(require 'undo-tree)
+(global-undo-tree-mode)
 
 ;;;; misc functions		
 (defun create-or-switch-to-term ()
@@ -60,10 +66,14 @@
 ;; text manipulation
 (global-set-key (kbd "M-t") 'kill-line)
 
+;; undo/redo
+(global-set-key (kbd "C-z") 'undo-tree-undo)
+(global-set-key (kbd "C-S-z") 'undo-tree-redo)
+
 ;; buffers and windows
 (global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-x C-b") 'bs-show)
-(global-set-key (kbd "C-z") 'create-or-switch-to-term)
+(global-set-key (kbd "C-c t") 'create-or-switch-to-term)
 (global-set-key (kbd "C-k") 'kill-buffer)
 
 ;; other
@@ -104,6 +114,7 @@
 (color-theme-initialize)
 (color-theme-lethe)
 
+;; minibuffer completion
 (require 'ido)
 (ido-mode)
 
