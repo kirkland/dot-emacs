@@ -53,13 +53,21 @@
 ;;;; misc functions		
 (defun create-or-switch-to-term ()
   (interactive)
-  (if (get-buffer "*ansi-term*")
-      (switch-to-buffer (get-buffer "*ansi-term*"))
-      (ansi-term "/bin/bash")))
+  (if (get-buffer "ansi-term")
+      (switch-to-buffer (get-buffer "ansi-term"))
+      (bash-term)))
 
 (defun switch-to-most-recent-hidden-buffer ()
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) t)))
+
+(defun bash-term ()
+  "start ansi-term without asterisks so buffer switcher will not filter it out"
+  (interactive)
+  (ansi-term "/bin/bash")
+  (let
+    ((new-name (replace-regexp-in-string "\*" "" (buffer-name))))
+    (rename-buffer new-name t)))
 
 ;;;; global bindings
 
