@@ -1,7 +1,16 @@
 (defconst emacs-root (concat (getenv "HOME") "/.emacs.d/"))
 
+;; put all junk in one place
 (defconst emacs-scratch (concat (getenv "HOME") "/.scratch-emacs/"))
 (make-directory emacs-scratch t)
+(setq backup-by-copying t)
+(setq backup-directory-alist
+      `(("." . ,emacs-scratch)
+        (,tramp-file-name-regexp nil)))
+(setq auto-save-list-file-prefix
+      (concat emacs-scratch ".auto-saves-"))
+(setq auto-save-file-name-transforms
+      `((".*" ,emacs-scratch t)))
 
 ;; misc options
 (and (fboundp 'tool-bar-mode) (tool-bar-mode -1))
