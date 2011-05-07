@@ -34,8 +34,7 @@
 (setq default-tab-width 4)
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
-
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/emacs/")
 
 ;; run extra initialization. for some reason, when starting in daemon mode
 ;; on OSX, it can't find the font i want
@@ -140,7 +139,7 @@
   ;; If there is more than one, they won't work right.
  )
 
-(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/")
+(add-to-list 'load-path "~/emacs/color-theme-6.6.0/")
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-lethe)
@@ -156,5 +155,6 @@
                                   (setq indent-tabs-mode nil)))
 
 ;; start server. then, use emacs-newwindow to connect to it
-(unless server-process
-  (server-start))
+(unless (eql system-type 'darwin)
+  (unless server-process
+    (server-start)))
