@@ -31,8 +31,10 @@
 (setq bookmark-save-flag 1) ; save bookmarks immediately
 (setq bookmark-default-file (concat emacs-scratch "bookmarks.bmk"))
 (setq scroll-conservatively 10000) ; scroll one line at a time
+(setq default-tab-width 4)
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
+
 (add-to-list 'load-path "~/.emacs.d/")
 
 ;; run extra initialization. for some reason, when starting in daemon mode
@@ -146,6 +148,12 @@
 ;; minibuffer completion
 (require 'ido)
 (ido-mode)
+
+;; js-mode
+(add-hook 'js-mode-hook (lambda ()
+                                  (setq tab-width 2)
+                                  (setq js-indent-level 2)
+                                  (setq indent-tabs-mode nil)))
 
 ;; start server. then, use emacs-newwindow to connect to it
 (unless server-process
