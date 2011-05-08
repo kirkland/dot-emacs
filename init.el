@@ -98,8 +98,7 @@
 ;; buffers and windows
 (global-set-key (kbd "C-b") 'switch-to-buffer)
 (global-set-key (kbd "C-x C-b") 'bs-show)
-(global-set-key (kbd "C-c t") 'create-or-switch-to-term)
-(global-set-key (kbd "C-c C-t") 'create-or-switch-to-term)
+(global-set-key (kbd "C-'") 'create-or-switch-to-term)
 (global-set-key (kbd "C-k") 'kill-buffer)
 (global-set-key (kbd "C-<SPC>") 'other-window)
 (global-set-key (kbd "C-S-<SPC>") (lambda () (interactive) (other-window -1)))
@@ -153,6 +152,12 @@
                                   (setq tab-width 2)
                                   (setq js-indent-level 2)
                                   (setq indent-tabs-mode nil)))
+
+;; sass/haml
+(require 'haml-mode)
+(require 'sass-mode)
+(add-hook 'haml-mode-hook (lambda ()
+							(setq indent-tabs-mode nil)))
 
 ;; start server. then, use emacs-newwindow to connect to it
 (unless (eql system-type 'darwin)
