@@ -34,6 +34,7 @@
 (setq default-tab-width 4)
 (setq tab-width 4)
 (setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 (add-to-list 'load-path "~/emacs/")
 
 ;; run extra initialization. for some reason, when starting in daemon mode
