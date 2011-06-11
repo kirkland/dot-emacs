@@ -139,6 +139,7 @@
   ;; If there is more than one, they won't work right.
  )
 
+;; colors
 (add-to-list 'load-path "~/emacs/color-theme-6.6.0/")
 (require 'color-theme)
 (color-theme-initialize)
@@ -159,6 +160,10 @@
 (require 'sass-mode)
 (add-hook 'haml-mode-hook (lambda ()
 							(setq indent-tabs-mode nil)))
+
+;; coffeescript
+(add-to-list 'load-path "~/emacs/coffee-mode")
+(require 'coffee-mode)
 
 ;; start server. then, use emacs-newwindow to connect to it
 (unless (eql system-type 'darwin)
