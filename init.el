@@ -115,6 +115,7 @@
 (global-set-key (kbd "C-c l") 'longlines-mode)
 (global-set-key (kbd "M-q") 'undo)
 (global-set-key (kbd "M-<SPC>") 'set-mark-command)
+(global-set-key (kbd "C-d") 'toggle-read-only)
 
 ;;;; mode bindings
 
