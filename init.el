@@ -166,6 +166,9 @@
 (add-to-list 'load-path "~/emacs/coffee-mode")
 (require 'coffee-mode)
 
+;; ledger
+(load "ledger")
+
 ;; start server. then, use emacs-newwindow to connect to it
 (unless (eql system-type 'darwin)
   (unless server-process
